@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/go-kratos/kratos/v2"
-	"github.com/go-kratos/kratos/v2/metadata"
+	"github.com/plum330/kratos/v2"
+	"github.com/plum330/kratos/v2/metadata"
 
 	"go.opentelemetry.io/otel/propagation"
 )
@@ -22,14 +22,14 @@ func TestMetadata_Inject(t *testing.T) {
 		want string
 	}{
 		{
-			name: "https://go-kratos.dev",
-			args: args{"https://go-kratos.dev", propagation.HeaderCarrier{}},
-			want: "https://go-kratos.dev",
+			name: "https://plum330.dev",
+			args: args{"https://plum330.dev", propagation.HeaderCarrier{}},
+			want: "https://plum330.dev",
 		},
 		{
-			name: "https://github.com/go-kratos/kratos",
-			args: args{"https://github.com/go-kratos/kratos", propagation.HeaderCarrier{"mode": []string{"test"}}},
-			want: "https://github.com/go-kratos/kratos",
+			name: "https://github.com/plum330/kratos",
+			args: args{"https://github.com/plum330/kratos", propagation.HeaderCarrier{"mode": []string{"test"}}},
+			want: "https://github.com/plum330/kratos",
 		},
 	}
 	for _, tt := range tests {
@@ -57,23 +57,23 @@ func TestMetadata_Extract(t *testing.T) {
 		crash bool
 	}{
 		{
-			name: "https://go-kratos.dev",
+			name: "https://plum330.dev",
 			args: args{
 				parent:  context.Background(),
-				carrier: propagation.HeaderCarrier{"X-Md-Service-Name": []string{"https://go-kratos.dev"}},
+				carrier: propagation.HeaderCarrier{"X-Md-Service-Name": []string{"https://plum330.dev"}},
 			},
-			want: "https://go-kratos.dev",
+			want: "https://plum330.dev",
 		},
 		{
-			name: "https://github.com/go-kratos/kratos",
+			name: "https://github.com/plum330/kratos",
 			args: args{
 				parent:  metadata.NewServerContext(context.Background(), metadata.Metadata{}),
-				carrier: propagation.HeaderCarrier{"X-Md-Service-Name": []string{"https://github.com/go-kratos/kratos"}},
+				carrier: propagation.HeaderCarrier{"X-Md-Service-Name": []string{"https://github.com/plum330/kratos"}},
 			},
-			want: "https://github.com/go-kratos/kratos",
+			want: "https://github.com/plum330/kratos",
 		},
 		{
-			name: "https://github.com/go-kratos/kratos",
+			name: "https://github.com/plum330/kratos",
 			args: args{
 				parent:  metadata.NewServerContext(context.Background(), metadata.Metadata{}),
 				carrier: propagation.HeaderCarrier{"X-Md-Service-Name": nil},

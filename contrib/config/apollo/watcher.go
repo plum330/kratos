@@ -6,9 +6,9 @@ import (
 
 	"github.com/apolloconfig/agollo/v4/storage"
 
-	"github.com/go-kratos/kratos/v2/config"
-	"github.com/go-kratos/kratos/v2/encoding"
-	"github.com/go-kratos/kratos/v2/log"
+	"github.com/plum330/kratos/v2/config"
+	"github.com/plum330/kratos/v2/encoding"
+	"github.com/plum330/kratos/v2/log"
 )
 
 type watcher struct {

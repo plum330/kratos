@@ -9,7 +9,7 @@ import (
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/fatih/color"
 
-	"github.com/go-kratos/kratos/cmd/kratos/v2/internal/base"
+	"github.com/plum330/kratos/cmd/kratos/v2/internal/base"
 )
 
 // Project is a project template.
@@ -59,6 +59,6 @@ func (p *Project) New(ctx context.Context, dir string, layout string, branch str
 	fmt.Println(color.WhiteString("$ go build -o ./bin/ ./... "))
 	fmt.Println(color.WhiteString("$ ./bin/%s -conf ./configs\n", p.Name))
 	fmt.Println("			🤝 Thanks for using Kratos")
-	fmt.Println("	📚 Tutorial: https://go-kratos.dev/docs/getting-started/start")
+	fmt.Println("	📚 Tutorial: https://plum330.dev/docs/getting-started/start")
 	return nil
 }

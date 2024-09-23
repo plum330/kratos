@@ -12,7 +12,7 @@ import (
 	"github.com/AlecAivazis/survey/v2"
 	"github.com/spf13/cobra"
 
-	"github.com/go-kratos/kratos/cmd/kratos/v2/internal/base"
+	"github.com/plum330/kratos/cmd/kratos/v2/internal/base"
 )
 
 // CmdNew represents the new command.
@@ -32,7 +32,7 @@ var (
 
 func init() {
 	if repoURL = os.Getenv("KRATOS_LAYOUT_REPO"); repoURL == "" {
-		repoURL = "https://github.com/go-kratos/kratos-layout.git"
+		repoURL = "https://github.com/plum330/kratos-layout.git"
 	}
 	timeout = "60s"
 	CmdNew.Flags().StringVarP(&repoURL, "repo-url", "r", repoURL, "layout repo")

@@ -8,7 +8,7 @@ import (
 
 	"google.golang.org/protobuf/proto"
 
-	"github.com/go-kratos/kratos/v2/encoding"
+	"github.com/plum330/kratos/v2/encoding"
 )
 
 // Name is the name registered for the proto compressor.

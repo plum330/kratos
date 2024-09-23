@@ -1,9 +1,9 @@
-module github.com/go-kratos/kratos/contrib/registry/nacos/v2
+module github.com/plum330/kratos/contrib/registry/nacos/v2
 
 go 1.19
 
 require (
-	github.com/go-kratos/kratos/v2 v2.8.0
+	github.com/plum330/kratos/v2 v2.8.0
 	github.com/nacos-group/nacos-sdk-go v1.0.9
 )
 
@@ -25,6 +25,6 @@ require (
 	gopkg.in/ini.v1 v1.42.0 // indirect
 )
 
-replace github.com/go-kratos/kratos/v2 => ../../../
+replace github.com/plum330/kratos/v2 => ../../../
 
 replace github.com/buger/jsonparser => github.com/buger/jsonparser v1.1.1

@@ -3,7 +3,7 @@ package selector
 import (
 	"strconv"
 
-	"github.com/go-kratos/kratos/v2/registry"
+	"github.com/plum330/kratos/v2/registry"
 )
 
 var _ Node = (*DefaultNode)(nil)

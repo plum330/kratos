@@ -10,7 +10,7 @@ import (
 	"github.com/nacos-group/nacos-sdk-go/common/constant"
 	"github.com/nacos-group/nacos-sdk-go/vo"
 
-	"github.com/go-kratos/kratos/v2/registry"
+	"github.com/plum330/kratos/v2/registry"
 )
 
 func TestRegistry_Register(t *testing.T) {

@@ -5,9 +5,9 @@ import (
 	"errors"
 	"testing"
 
-	kratoserrors "github.com/go-kratos/kratos/v2/errors"
-	"github.com/go-kratos/kratos/v2/internal/group"
-	"github.com/go-kratos/kratos/v2/transport"
+	kratoserrors "github.com/plum330/kratos/v2/errors"
+	"github.com/plum330/kratos/v2/internal/group"
+	"github.com/plum330/kratos/v2/transport"
 )
 
 type transportMock struct {

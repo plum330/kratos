@@ -10,9 +10,9 @@ import (
 
 	"github.com/polarismesh/polaris-go"
 
-	"github.com/go-kratos/kratos/v2"
-	"github.com/go-kratos/kratos/v2/registry"
-	"github.com/go-kratos/kratos/v2/selector"
+	"github.com/plum330/kratos/v2"
+	"github.com/plum330/kratos/v2/registry"
+	"github.com/plum330/kratos/v2/selector"
 )
 
 func TestRouter(t *testing.T) {

@@ -6,7 +6,7 @@ import (
 	"github.com/polarismesh/polaris-go"
 	"github.com/polarismesh/polaris-go/api"
 
-	"github.com/go-kratos/kratos/v2/config"
+	"github.com/plum330/kratos/v2/config"
 )
 
 type Polaris struct {

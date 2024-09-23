@@ -1,9 +1,9 @@
-module github.com/go-kratos/kratos/contrib/config/consul/v2
+module github.com/plum330/kratos/contrib/config/consul/v2
 
 go 1.19
 
 require (
-	github.com/go-kratos/kratos/v2 v2.8.0
+	github.com/plum330/kratos/v2 v2.8.0
 	github.com/hashicorp/consul/api v1.26.1
 )
 
@@ -29,4 +29,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/go-kratos/kratos/v2 => ../../../
+replace github.com/plum330/kratos/v2 => ../../../

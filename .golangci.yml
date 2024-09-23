@@ -66,6 +66,6 @@ linters-settings:
     # recommend 10-20
     min-complexity: 50
   goimports:
-    local-prefixes: github.com/go-kratos # Put imports beginning with prefix after 3rd-party packages
+    local-prefixes: github.com/plum330 # Put imports beginning with prefix after 3rd-party packages
   misspell: # Finds commonly misspelled English words in comments
     locale: US

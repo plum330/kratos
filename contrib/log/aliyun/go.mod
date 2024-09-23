@@ -1,10 +1,10 @@
-module github.com/go-kratos/kratos/contrib/log/aliyun/v2
+module github.com/plum330/kratos/contrib/log/aliyun/v2
 
 go 1.19
 
 require (
 	github.com/aliyun/aliyun-log-go-sdk v0.1.75
-	github.com/go-kratos/kratos/v2 v2.8.0
+	github.com/plum330/kratos/v2 v2.8.0
 	google.golang.org/protobuf v1.33.0
 )
 
@@ -25,6 +25,6 @@ require (
 )
 
 replace (
-	github.com/go-kratos/kratos/v2 => ../../../
+	github.com/plum330/kratos/v2 => ../../../
 	github.com/gogo/protobuf v1.3.1 => github.com/gogo/protobuf v1.3.2
 )

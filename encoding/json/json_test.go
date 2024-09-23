@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	testData "github.com/go-kratos/kratos/v2/internal/testdata/encoding"
+	testData "github.com/plum330/kratos/v2/internal/testdata/encoding"
 )
 
 type testEmbed struct {
@@ -77,8 +77,8 @@ func TestJSON_Marshal(t *testing.T) {
 			expect: `{"a":"a","b":"b","c":"c"}`,
 		},
 		{
-			input:  &testData.TestModel{Id: 1, Name: "go-kratos", Hobby: []string{"1", "2"}},
-			expect: `{"id":"1","name":"go-kratos","hobby":["1","2"],"attrs":{}}`,
+			input:  &testData.TestModel{Id: 1, Name: "plum330", Hobby: []string{"1", "2"}},
+			expect: `{"id":"1","name":"plum330","hobby":["1","2"],"attrs":{}}`,
 		},
 		{
 			input:  &mock{value: Gopher},
@@ -118,11 +118,11 @@ func TestJSON_Unmarshal(t *testing.T) {
 			expect: &p,
 		},
 		{
-			input:  `{"id":"1","name":"go-kratos","hobby":["1","2"],"attrs":{}}`,
+			input:  `{"id":"1","name":"plum330","hobby":["1","2"],"attrs":{}}`,
 			expect: &p2,
 		},
 		{
-			input:  `{"id":1,"name":"go-kratos","hobby":["1","2"]}`,
+			input:  `{"id":1,"name":"plum330","hobby":["1","2"]}`,
 			expect: &p3,
 		},
 		{

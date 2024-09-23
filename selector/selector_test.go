@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-kratos/kratos/v2/registry"
+	"github.com/plum330/kratos/v2/registry"
 )
 
 var errNodeNotMatch = errors.New("node is not match")

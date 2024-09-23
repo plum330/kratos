@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	kratoserror "github.com/go-kratos/kratos/v2/errors"
+	kratoserror "github.com/plum330/kratos/v2/errors"
 )
 
 type (
@@ -37,16 +37,16 @@ func TestBindQuery(t *testing.T) {
 		{
 			name: "test",
 			args: args{
-				vars:   map[string][]string{"name": {"kratos"}, "url": {"https://go-kratos.dev/"}},
+				vars:   map[string][]string{"name": {"kratos"}, "url": {"https://plum330.dev/"}},
 				target: &TestBind{},
 			},
 			err:  nil,
-			want: &TestBind{"kratos", "https://go-kratos.dev/"},
+			want: &TestBind{"kratos", "https://plum330.dev/"},
 		},
 		{
 			name: "test1",
 			args: args{
-				vars:   map[string][]string{"age": {"kratos"}, "url": {"https://go-kratos.dev/"}},
+				vars:   map[string][]string{"age": {"kratos"}, "url": {"https://plum330.dev/"}},
 				target: &TestBind2{},
 			},
 			err: kratoserror.BadRequest("CODEC", "Field Namespace:age ERROR:Invalid Integer Value 'kratos' Type 'int' Namespace 'age'"),
@@ -54,7 +54,7 @@ func TestBindQuery(t *testing.T) {
 		{
 			name: "test2",
 			args: args{
-				vars:   map[string][]string{"age": {"1"}, "url": {"https://go-kratos.dev/"}},
+				vars:   map[string][]string{"age": {"1"}, "url": {"https://plum330.dev/"}},
 				target: &TestBind2{},
 			},
 			err:  nil,
@@ -101,12 +101,12 @@ func TestBindForm(t *testing.T) {
 				req: &http.Request{
 					Method: http.MethodPost,
 					Header: http.Header{"Content-Type": {"application/x-www-form-urlencoded; param=value"}},
-					Body:   io.NopCloser(strings.NewReader("name=kratos&url=https://go-kratos.dev/")),
+					Body:   io.NopCloser(strings.NewReader("name=kratos&url=https://plum330.dev/")),
 				},
 				target: &TestBind{},
 			},
 			err:  nil,
-			want: &TestBind{"kratos", "https://go-kratos.dev/"},
+			want: &TestBind{"kratos", "https://plum330.dev/"},
 		},
 		{
 			name: "error BadRequest",

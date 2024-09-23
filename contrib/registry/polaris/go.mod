@@ -1,9 +1,9 @@
-module github.com/go-kratos/kratos/contrib/registry/polaris/v2
+module github.com/plum330/kratos/contrib/registry/polaris/v2
 
 go 1.19
 
 require (
-	github.com/go-kratos/kratos/v2 v2.8.0
+	github.com/plum330/kratos/v2 v2.8.0
 	github.com/polarismesh/polaris-go v1.3.0
 )
 
@@ -36,4 +36,4 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
 
-replace github.com/go-kratos/kratos/v2 => ../../../
+replace github.com/plum330/kratos/v2 => ../../../

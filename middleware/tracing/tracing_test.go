@@ -11,8 +11,8 @@ import (
 	tracesdk "go.opentelemetry.io/otel/sdk/trace"
 	"go.opentelemetry.io/otel/trace"
 
-	"github.com/go-kratos/kratos/v2/log"
-	"github.com/go-kratos/kratos/v2/transport"
+	"github.com/plum330/kratos/v2/log"
+	"github.com/plum330/kratos/v2/transport"
 )
 
 var _ transport.Transporter = (*mockTransport)(nil)
@@ -133,7 +133,7 @@ func TestServer(t *testing.T) {
 		)
 		childSpanID = SpanID()(ctx).(string)
 		childTraceID = TraceID()(ctx).(string)
-		return req.(string) + "https://go-kratos.dev", nil
+		return req.(string) + "https://plum330.dev", nil
 	}
 
 	var ctx context.Context
@@ -205,7 +205,7 @@ func TestClient(t *testing.T) {
 		)
 		childSpanID = SpanID()(ctx).(string)
 		childTraceID = TraceID()(ctx).(string)
-		return req.(string) + "https://go-kratos.dev", nil
+		return req.(string) + "https://plum330.dev", nil
 	}
 
 	var ctx context.Context

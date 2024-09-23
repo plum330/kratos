@@ -8,7 +8,7 @@ import (
 
 	"github.com/polarismesh/polaris-go"
 
-	"github.com/go-kratos/kratos/v2/registry"
+	"github.com/plum330/kratos/v2/registry"
 )
 
 // TestRegistry
