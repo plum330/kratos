@@ -1,7 +1,7 @@
 The kratos community wants to be helped by a wide range of developers, so you'd like to take a few minutes to read this guide before you mention the problem or pull request.
 
 ## Reporting Bug or Fixing Bugs
-We use GitHub issues to manage issues. If you want to submit , first make sure you've searched for existing issues, pull requests and read our [FAQ](https://plum330.dev/docs/intro/faq).
+We use GitHub issues to manage issues. If you want to submit , first make sure you've searched for existing issues, pull requests and read our [FAQ](https://go-kratos.dev/docs/intro/faq).
 
 When submitting a bug report, use the issue template we provide to clearly describe the problems encountered and how to reproduce, and if convenient it is best to provide a minimal reproduce repository.
 

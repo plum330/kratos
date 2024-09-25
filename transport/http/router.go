@@ -1,8 +1,11 @@
 package http
 
 import (
+	"context"
 	"net/http"
 	"path"
+
+	"github.com/gin-gonic/gin"
 )
 
 // WalkRouteFunc is the type of the function called for each route visited by Walk.
@@ -43,16 +46,25 @@ func (r *Router) Group(prefix string, filters ...FilterFunc) *Router {
 
 // Handle registers a new route with a matcher for the URL path and method.
 func (r *Router) Handle(method, relativePath string, h HandlerFunc, filters ...FilterFunc) {
-	next := http.Handler(http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
-		ctx := &wrapper{router: r}
-		ctx.Reset(res, req)
-		if err := h(ctx); err != nil {
-			r.srv.ene(res, req, err)
+	handler := func(ctx *gin.Context) {
+		// /uri/:name/:id
+		mp := make(map[string]string, len(ctx.Params))
+		for _, param := range ctx.Params {
+			mp[param.Key] = param.Value
 		}
-	}))
-	next = FilterChain(filters...)(next)
-	next = FilterChain(r.filters...)(next)
-	r.srv.router.Handle(path.Join(r.prefix, relativePath), next).Methods(method)
+		ctx.Request = ctx.Request.WithContext(context.WithValue(ctx.Request.Context(), RequestVars, mp))
+		hf := http.HandlerFunc(func(res http.ResponseWriter, req *http.Request) {
+			w := &wrapper{router: r}
+			w.Reset(res, req)
+			if err := h(w); err != nil {
+				r.srv.ene(res, req, err)
+			}
+		})
+		next := FilterChain(filters...)(hf)
+		next = FilterChain(r.filters...)(next)
+		next.ServeHTTP(ctx.Writer, ctx.Request)
+	}
+	r.srv.engine.Handle(method, r.srv.prefix+relativePath, handler)
 }
 
 // GET registers a new GET route for a path with matching handler in the router.

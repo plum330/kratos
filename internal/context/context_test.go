@@ -12,7 +12,7 @@ func TestContext(t *testing.T) {
 	type ctxKey1 struct{}
 	type ctxKey2 struct{}
 	ctx1 := context.WithValue(context.Background(), ctxKey1{}, "https://github.com/plum330/")
-	ctx2 := context.WithValue(context.Background(), ctxKey2{}, "https://plum330.dev/")
+	ctx2 := context.WithValue(context.Background(), ctxKey2{}, "https://go-kratos.dev/")
 
 	ctx, cancel := Merge(ctx1, ctx2)
 	defer cancel()
@@ -31,8 +31,8 @@ func TestContext(t *testing.T) {
 	if !ok {
 		t.Errorf("expect %v, got %v", true, ok)
 	}
-	if !reflect.DeepEqual("https://plum330.dev/", value2) {
-		t.Errorf("expect %v, got %v", "https://plum330.dev/", value2)
+	if !reflect.DeepEqual("https://go-kratos.dev/", value2) {
+		t.Errorf("expect %v, got %v", "https://go-kratos.dev/", value2)
 	}
 
 	t.Log(value1)
@@ -45,7 +45,7 @@ func TestMerge(t *testing.T) {
 	ctx, cancel := context.WithCancel(context.Background())
 	cancel()
 	ctx1 := context.WithValue(context.Background(), ctxKey1{}, "https://github.com/plum330/")
-	ctx2 := context.WithValue(ctx, ctxKey2{}, "https://plum330.dev/")
+	ctx2 := context.WithValue(ctx, ctxKey2{}, "https://go-kratos.dev/")
 
 	ctx, cancel = Merge(ctx1, ctx2)
 	defer cancel()
@@ -64,8 +64,8 @@ func TestMerge(t *testing.T) {
 	if !ok {
 		t.Errorf("expect %v, got %v", true, ok)
 	}
-	if !reflect.DeepEqual(value2, "https://plum330.dev/") {
-		t.Errorf("expect %v, got %v", " https://plum330.dev/", value2)
+	if !reflect.DeepEqual(value2, "https://go-kratos.dev/") {
+		t.Errorf("expect %v, got %v", " https://go-kratos.dev/", value2)
 	}
 
 	t.Log(ctx)

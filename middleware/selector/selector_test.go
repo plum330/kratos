@@ -161,8 +161,8 @@ func TestFunc(t *testing.T) {
 			ctx:  transport.NewServerContext(context.Background(), &Transport{operation: "/test.Name/1234"}),
 		},
 		{
-			name: "/plum330.dev/kratos",
-			ctx:  transport.NewServerContext(context.Background(), &Transport{operation: "/plum330.dev/kratos"}),
+			name: "/go-kratos.dev/kratos",
+			ctx:  transport.NewServerContext(context.Background(), &Transport{operation: "/go-kratos.dev/kratos"}),
 		},
 	}
 	for _, test := range tests {
@@ -172,7 +172,7 @@ func TestFunc(t *testing.T) {
 				return "reply", nil
 			}
 			next = Server(testMiddleware).Match(func(ctx context.Context, operation string) bool {
-				if strings.HasPrefix(operation, "/plum330.dev") || strings.HasSuffix(operation, "world") {
+				if strings.HasPrefix(operation, "/go-kratos.dev") || strings.HasSuffix(operation, "world") {
 					return true
 				}
 				return false
@@ -215,9 +215,9 @@ func TestHeaderFunc(t *testing.T) {
 			}),
 		},
 		{
-			name: "/plum330.dev/kratos",
+			name: "/go-kratos.dev/kratos",
 			ctx: transport.NewServerContext(context.Background(), &Transport{
-				operation: "/plum330.dev/kratos",
+				operation: "/go-kratos.dev/kratos",
 				headers:   &mockHeader{map[string][]string{"X-Test": {"test"}}},
 			}),
 		},

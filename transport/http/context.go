@@ -9,8 +9,6 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/gorilla/mux"
-
 	"github.com/plum330/kratos/v2/middleware"
 	"github.com/plum330/kratos/v2/transport"
 	"github.com/plum330/kratos/v2/transport/http/binding"
@@ -71,8 +69,11 @@ func (c *wrapper) Header() http.Header {
 }
 
 func (c *wrapper) Vars() url.Values {
-	raws := mux.Vars(c.req)
+	raws, ok := c.req.Context().Value(RequestVars).(map[string]string)
 	vars := make(url.Values, len(raws))
+	if !ok {
+		return vars
+	}
 	for k, v := range raws {
 		vars[k] = []string{v}
 	}

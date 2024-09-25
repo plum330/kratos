@@ -7,8 +7,6 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/gorilla/mux"
-
 	"github.com/plum330/kratos/v2/encoding"
 	"github.com/plum330/kratos/v2/errors"
 	"github.com/plum330/kratos/v2/internal/httputil"
@@ -17,6 +15,10 @@ import (
 
 // SupportPackageIsVersion1 These constants should not be referenced from any other code.
 const SupportPackageIsVersion1 = true
+
+type RequestVarType string
+
+const RequestVars RequestVarType = "x-request-vars"
 
 // Redirector replies to the request with a redirect to url
 // which may be a path relative to the request path.
@@ -44,10 +46,13 @@ type EncodeErrorFunc func(http.ResponseWriter, *http.Request, error)
 
 // DefaultRequestVars decodes the request vars to object.
 func DefaultRequestVars(r *http.Request, v interface{}) error {
-	raws := mux.Vars(r)
-	vars := make(url.Values, len(raws))
-	for k, v := range raws {
-		vars[k] = []string{v}
+	params, ok := r.Context().Value(RequestVars).(map[string]string)
+	if !ok {
+		return nil
+	}
+	vars := make(url.Values, len(params))
+	for key, value := range params {
+		vars[key] = []string{value}
 	}
 	return binding.BindQuery(vars, v)
 }
@@ -80,34 +85,64 @@ func DefaultRequestDecoder(r *http.Request, v interface{}) error {
 	return nil
 }
 
+type Head struct {
+	Code int    `json:"code"`
+	Msg  string `json:"msg"`
+}
+
+type Response struct {
+	*Head
+	Data any `json:"data"`
+}
+
 // DefaultResponseEncoder encodes the object to the HTTP response.
 func DefaultResponseEncoder(w http.ResponseWriter, r *http.Request, v interface{}) error {
 	if v == nil {
 		return nil
 	}
 	if rd, ok := v.(Redirector); ok {
-		url, code := rd.Redirect()
-		http.Redirect(w, r, url, code)
+		u, code := rd.Redirect()
+		http.Redirect(w, r, u, code)
 		return nil
 	}
+
+	rsp := &Response{
+		Head: &Head{
+			Msg: "成功",
+		},
+		Data: v,
+	}
 	codec, _ := CodecForRequest(r, "Accept")
-	data, err := codec.Marshal(v)
+	hb, err := codec.Marshal(rsp.Head)
 	if err != nil {
 		return err
 	}
+	pb, err := codec.Marshal(rsp.Data)
+	if err != nil {
+		return err
+	}
+	data := make([]byte, 0, len(hb)+len(pb)+8)
+	data = append(data, hb[:len(hb)-1]...)
+	data = append(data, []byte(`,"data":`)...)
+	data = append(data, pb...)
+	data = append(data, '}')
 	w.Header().Set("Content-Type", httputil.ContentType(codec.Name()))
+	w.WriteHeader(http.StatusOK)
 	_, err = w.Write(data)
-	if err != nil {
-		return err
-	}
-	return nil
+	return err
 }
 
 // DefaultErrorEncoder encodes the error to the HTTP response.
 func DefaultErrorEncoder(w http.ResponseWriter, r *http.Request, err error) {
 	se := errors.FromError(err)
+	rsp := &Response{
+		Head: &Head{
+			Code: int(se.Code),
+			Msg:  se.Message,
+		},
+	}
 	codec, _ := CodecForRequest(r, "Accept")
-	body, err := codec.Marshal(se)
+	body, err := codec.Marshal(rsp)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		return

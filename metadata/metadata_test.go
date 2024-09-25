@@ -190,11 +190,11 @@ func TestClientContext(t *testing.T) {
 	}{
 		{
 			name: "kratos",
-			args: args{context.Background(), Metadata{"hello": {"kratos"}, "kratos": {"https://plum330.dev"}}},
+			args: args{context.Background(), Metadata{"hello": {"kratos"}, "kratos": {"https://go-kratos.dev"}}},
 		},
 		{
 			name: "hello",
-			args: args{context.Background(), Metadata{"hello": {"kratos"}, "hello2": {"https://plum330.dev"}}},
+			args: args{context.Background(), Metadata{"hello": {"kratos"}, "hello2": {"https://go-kratos.dev"}}},
 		},
 	}
 	for _, tt := range tests {
@@ -223,11 +223,11 @@ func TestServerContext(t *testing.T) {
 	}{
 		{
 			name: "kratos",
-			args: args{context.Background(), Metadata{"hello": {"kratos"}, "kratos": {"https://plum330.dev"}}},
+			args: args{context.Background(), Metadata{"hello": {"kratos"}, "kratos": {"https://go-kratos.dev"}}},
 		},
 		{
 			name: "hello",
-			args: args{context.Background(), Metadata{"hello": {"kratos"}, "hello2": {"https://plum330.dev"}}},
+			args: args{context.Background(), Metadata{"hello": {"kratos"}, "hello2": {"https://go-kratos.dev"}}},
 		},
 	}
 	for _, tt := range tests {
@@ -262,8 +262,8 @@ func TestAppendToClientContext(t *testing.T) {
 		},
 		{
 			name: "hello",
-			args: args{Metadata{"hi": {"https://plum330.dev/"}}, []string{"hello", "kratos", "env", "dev"}},
-			want: Metadata{"hello": {"kratos"}, "env": {"dev"}, "hi": {"https://plum330.dev/"}},
+			args: args{Metadata{"hi": {"https://go-kratos.dev/"}}, []string{"hello", "kratos", "env", "dev"}},
+			want: Metadata{"hello": {"kratos"}, "env": {"dev"}, "hi": {"https://go-kratos.dev/"}},
 		},
 	}
 	for _, tt := range tests {
@@ -317,8 +317,8 @@ func TestMergeToClientContext(t *testing.T) {
 		},
 		{
 			name: "hello",
-			args: args{Metadata{"hi": {"https://plum330.dev/"}}, Metadata{"hello": {"kratos"}, "env": {"dev"}}},
-			want: Metadata{"hello": {"kratos"}, "env": {"dev"}, "hi": {"https://plum330.dev/"}},
+			args: args{Metadata{"hi": {"https://go-kratos.dev/"}}, Metadata{"hello": {"kratos"}, "env": {"dev"}}},
+			want: Metadata{"hello": {"kratos"}, "env": {"dev"}, "hi": {"https://go-kratos.dev/"}},
 		},
 	}
 	for _, tt := range tests {
@@ -337,16 +337,16 @@ func TestMergeToClientContext(t *testing.T) {
 }
 
 func TestMetadata_Range(t *testing.T) {
-	md := Metadata{"kratos": {"kratos"}, "https://plum330.dev/": {"https://plum330.dev/"}, "plum330": {"plum330"}}
+	md := Metadata{"kratos": {"kratos"}, "https://go-kratos.dev/": {"https://go-kratos.dev/"}, "plum330": {"plum330"}}
 	tmp := Metadata{}
 	md.Range(func(k string, v []string) bool {
-		if k == "https://plum330.dev/" || k == "kratos" {
+		if k == "https://go-kratos.dev/" || k == "kratos" {
 			tmp[k] = v
 		}
 		return true
 	})
-	if !reflect.DeepEqual(tmp, Metadata{"https://plum330.dev/": {"https://plum330.dev/"}, "kratos": {"kratos"}}) {
-		t.Errorf("metadata = %v, want %v", tmp, Metadata{"https://plum330.dev/": {"https://plum330.dev/"}, "kratos": {"kratos"}})
+	if !reflect.DeepEqual(tmp, Metadata{"https://go-kratos.dev/": {"https://go-kratos.dev/"}, "kratos": {"kratos"}}) {
+		t.Errorf("metadata = %v, want %v", tmp, Metadata{"https://go-kratos.dev/": {"https://go-kratos.dev/"}, "kratos": {"kratos"}})
 	}
 	tmp = Metadata{}
 	md.Range(func(k string, v []string) bool {
@@ -365,8 +365,8 @@ func TestMetadata_Clone(t *testing.T) {
 	}{
 		{
 			name: "kratos",
-			m:    Metadata{"kratos": {"kratos"}, "https://plum330.dev/": {"https://plum330.dev/"}, "plum330": {"plum330"}},
-			want: Metadata{"kratos": {"kratos"}, "https://plum330.dev/": {"https://plum330.dev/"}, "plum330": {"plum330"}},
+			m:    Metadata{"kratos": {"kratos"}, "https://go-kratos.dev/": {"https://go-kratos.dev/"}, "plum330": {"plum330"}},
+			want: Metadata{"kratos": {"kratos"}, "https://go-kratos.dev/": {"https://go-kratos.dev/"}, "plum330": {"plum330"}},
 		},
 		{
 			name: "go",

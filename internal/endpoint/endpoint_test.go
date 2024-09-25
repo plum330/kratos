@@ -22,9 +22,9 @@ func TestNewEndpoint(t *testing.T) {
 			want: &url.URL{Scheme: "https", Host: "github.com/plum330/kratos/"},
 		},
 		{
-			name: "https://plum330.dev/",
-			args: args{"https", "plum330.dev/"},
-			want: &url.URL{Scheme: "https", Host: "plum330.dev/"},
+			name: "https://go-kratos.dev/",
+			args: args{"https", "go-kratos.dev/"},
+			want: &url.URL{Scheme: "https", Host: "go-kratos.dev/"},
 		},
 		{
 			name: "https://www.google.com/",
@@ -60,7 +60,7 @@ func TestParseEndpoint(t *testing.T) {
 		},
 		{
 			name:    "test",
-			args:    args{endpoints: []string{"http://plum330.dev/"}, scheme: "https"},
+			args:    args{endpoints: []string{"http://go-kratos.dev/"}, scheme: "https"},
 			want:    "",
 			wantErr: false,
 		},

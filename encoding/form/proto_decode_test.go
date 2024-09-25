@@ -80,7 +80,7 @@ func TestPopulateRepeatedField(t *testing.T) {
 }
 
 func TestPopulateMapField(t *testing.T) {
-	query, err := url.ParseQuery("map%5Bkratos%5D=https://plum330.dev/")
+	query, err := url.ParseQuery("map%5Bkratos%5D=https://go-kratos.dev/")
 	if err != nil {
 		t.Fatal(err)
 	}

@@ -1,4 +1,4 @@
-<p align="center"><a href="https://plum330.dev/" target="_blank"><img src="https://github.com/plum330/kratos/blob/main/docs/images/kratos-large.png?raw=true"></a></p>
+<p align="center"><a href="https://go-kratos.dev/" target="_blank"><img src="https://github.com/plum330/kratos/blob/main/docs/images/kratos-large.png?raw=true"></a></p>
 
 <p align="center">
 <a href="https://github.com/plum330/kratos/actions"><img src="https://github.com/plum330/kratos/workflows/Go/badge.svg" alt="Build Status"></a>
@@ -21,25 +21,25 @@
 
 Kratos is a microservice-oriented governance framework implemented by golang, which offers convenient capabilities to help you quickly build a bulletproof application from scratch, such as:
 
-- The [communication protocol](https://plum330.dev/en/docs/component/api) is based on the HTTP/gRPC through the definition of Protobuf.
-- Abstract [transport](https://plum330.dev/en/docs/component/transport/overview) layer support: [HTTP](https://plum330.dev/en/docs/component/transport/http) / [gRPC](https://plum330.dev/en/docs/component/transport/grpc).
-- Powerful [middleware](https://plum330.dev/en/docs/component/middleware/overview) design, support: [Tracing (OpenTelemetry)](https://plum330.dev/en/docs/component/middleware/tracing), [Metrics (Prometheus is default)](https://plum330.dev/en/docs/component/middleware/metrics), [Recovery](https://plum330.dev/en/docs/component/middleware/recovery) and more.
-- [Registry](https://plum330.dev/en/docs/component/registry) interface able to be connected with various other centralized registries through plug-ins.
-- The [standard log interfaces](https://plum330.dev/en/docs/component/log) ease the integration of the third-party log libs with logs collected through the *Fluentd*.
-- Automatically support the selection of the content [encoding](https://plum330.dev/en/docs/component/encoding) with Accept and Content-Type.
-- Multiple data sources are supported for [configurations](https://plum330.dev/en/docs/component/config) and dynamic configurations (use atomic operations).
-- In the protocol of HTTP/gRPC, use the uniform [metadata](https://plum330.dev/en/docs/component/metadata) transfer method.
-- You can define [errors](https://plum330.dev/en/docs/component/errors/) in protos and generate enums with protoc-gen-go.
-- You can define [verification rules](https://plum330.dev/en/docs/component/middleware/validate) in Protobuf supported by the HTTP/gRPC service.
-- [Swagger API](https://plum330.dev/en/docs/guide/openapi) is generated Automatically and embed Swagger UI endpoint can be started by adding [Swagger plugin](https://github.com/plum330/swagger-api).
+- The [communication protocol](https://go-kratos.dev/en/docs/component/api) is based on the HTTP/gRPC through the definition of Protobuf.
+- Abstract [transport](https://go-kratos.dev/en/docs/component/transport/overview) layer support: [HTTP](https://go-kratos.dev/en/docs/component/transport/http) / [gRPC](https://go-kratos.dev/en/docs/component/transport/grpc).
+- Powerful [middleware](https://go-kratos.dev/en/docs/component/middleware/overview) design, support: [Tracing (OpenTelemetry)](https://go-kratos.dev/en/docs/component/middleware/tracing), [Metrics (Prometheus is default)](https://go-kratos.dev/en/docs/component/middleware/metrics), [Recovery](https://go-kratos.dev/en/docs/component/middleware/recovery) and more.
+- [Registry](https://go-kratos.dev/en/docs/component/registry) interface able to be connected with various other centralized registries through plug-ins.
+- The [standard log interfaces](https://go-kratos.dev/en/docs/component/log) ease the integration of the third-party log libs with logs collected through the *Fluentd*.
+- Automatically support the selection of the content [encoding](https://go-kratos.dev/en/docs/component/encoding) with Accept and Content-Type.
+- Multiple data sources are supported for [configurations](https://go-kratos.dev/en/docs/component/config) and dynamic configurations (use atomic operations).
+- In the protocol of HTTP/gRPC, use the uniform [metadata](https://go-kratos.dev/en/docs/component/metadata) transfer method.
+- You can define [errors](https://go-kratos.dev/en/docs/component/errors/) in protos and generate enums with protoc-gen-go.
+- You can define [verification rules](https://go-kratos.dev/en/docs/component/middleware/validate) in Protobuf supported by the HTTP/gRPC service.
+- [Swagger API](https://go-kratos.dev/en/docs/guide/openapi) is generated Automatically and embed Swagger UI endpoint can be started by adding [Swagger plugin](https://github.com/plum330/swagger-api).
 
 Kratos is accessible, powerful, and provides tools required for large, robust applications.
 
 ## Learning Kratos
 
-Kratos has the most extensive and thorough [documentation](https://plum330.dev/en/docs/getting-started/start) and [example](https://github.com/plum330/examples) library of all modern web application frameworks, making it a breeze to get started with the framework.
+Kratos has the most extensive and thorough [documentation](https://go-kratos.dev/en/docs/getting-started/start) and [example](https://github.com/plum330/examples) library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-We also provide a [modern template](https://github.com/plum330/kratos-layout). This template should help reduce the work required to setup up modern projects.
+We also provide a [modern template](https://github.com/go-kratos/kratos-layout). This template should help reduce the work required to setup up modern projects.
 
 ### Goals
 
@@ -79,7 +79,7 @@ kratos run
   
 Use a browser to open and visit: `http://localhost:8000/helloworld/kratos`, The kratos program is running!
 
-If you need more, please visit the kratos [documentation](https://plum330.dev/en/docs/getting-started/start).
+If you need more, please visit the kratos [documentation](https://go-kratos.dev/en/docs/getting-started/start).
 
 ## Security Vulnerabilities
 
@@ -87,13 +87,13 @@ If you discover a security vulnerability within Kratos, please send an e-mail to
 
 ## Community
 
-- [Wechat Group](https://github.com/plum330/kratos/issues/682)
+- [Wechat Group](https://github.com/go-kratos/kratos/issues/682)
 - [Discord Group](https://discord.gg/BWzJsUJ)
-- [plum330.dev](https://plum330.dev/en)
+- [go-kratos.dev](https://go-kratos.dev/en)
 
 ## Contributors
 
-Thank you for considering contributing to the Kratos framework! The contribution guide can be found in the [Kratos documentation](https://plum330.dev/en/docs/community/contribution).
+Thank you for considering contributing to the Kratos framework! The contribution guide can be found in the [Kratos documentation](https://go-kratos.dev/en/docs/community/contribution).
 
 <a href="https://github.com/plum330/kratos/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=plum330/kratos" />

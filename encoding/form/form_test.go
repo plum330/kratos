@@ -162,7 +162,7 @@ func TestProtoEncodeDecode(t *testing.T) {
 		Price:   11.23,
 		D:       22.22,
 		Byte:    []byte("123"),
-		Map:     map[string]string{"kratos": "https://plum330.dev/", "kratos_start": "https://plum330.dev/en/docs/getting-started/start/"},
+		Map:     map[string]string{"kratos": "https://go-kratos.dev/", "kratos_start": "https://go-kratos.dev/en/docs/getting-started/start/"},
 
 		Timestamp: timestamppb.New(time.Date(1970, 1, 1, 0, 0, 20, 2, time.Local)),
 		Duration:  &durationpb.Duration{Seconds: 120, Nanos: 22},
@@ -183,7 +183,7 @@ func TestProtoEncodeDecode(t *testing.T) {
 	}
 	if "a=19&age=18&b=true&bool=false&byte=MTIz&bytes=MTIz&count=3&d=22.22&double=12.33&duration="+
 		"2m0.000000022s&field=1%2C2&float=12.34&id=2233&int32=32&int64=64&"+
-		"map%5Bkratos%5D=https%3A%2F%2Fplum330.dev%2F&map%5Bkratos_start%5D=https%3A%2F%2Fplum330.dev%2Fen%2Fdocs%2Fgetting-started%2Fstart%2F&"+
+		"map%5Bkratos%5D=https%3A%2F%2Fgo-kratos.dev%2F&map%5Bkratos_start%5D=https%3A%2F%2Fgo-kratos.dev%2Fen%2Fdocs%2Fgetting-started%2Fstart%2F&"+
 		"numberOne=2233&price=11.23&sex=woman&simples=3344&simples=5566&string=plum330"+
 		"&timestamp=1970-01-01T00%3A00%3A20.000000002Z&uint32=32&uint64=64&very_simple.component=5566" != string(content) {
 		t.Errorf("rawpath is not equal to %s", content)

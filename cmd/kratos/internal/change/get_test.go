@@ -11,7 +11,7 @@ func TestParseGithubURL(t *testing.T) {
 		{"https://github.com/plum330/kratos.git", "plum330", "kratos"},
 		{"https://github.com/plum330/kratos", "plum330", "kratos"},
 		{"git@github.com:plum330/kratos.git", "plum330", "kratos"},
-		{"https://github.com/plum330/plum330.dev.git", "plum330", "plum330.dev"},
+		{"https://github.com/plum330/go-kratos.dev.git", "plum330", "go-kratos.dev"},
 	}
 	for _, url := range urls {
 		owner, repo := ParseGithubURL(url.url)

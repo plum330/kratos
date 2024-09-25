@@ -331,7 +331,7 @@ func TestNewClient(t *testing.T) {
 	if err == nil {
 		t.Error("except a parseTarget error")
 	}
-	_, err = NewClient(context.Background(), WithDiscovery(&mockDiscovery{}), WithEndpoint("https://plum330.dev/"))
+	_, err = NewClient(context.Background(), WithDiscovery(&mockDiscovery{}), WithEndpoint("https://go-kratos.dev/"))
 	if err == nil {
 		t.Error("err should not be equal to nil")
 	}

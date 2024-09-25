@@ -9,7 +9,7 @@ assignees: ''
 
 <!--
 Please answer these questions before submitting your issue. Thanks!
-For questions please use one of our forums: https://plum330.dev/docs/getting-started/faq
+For questions please use one of our forums: https://go-kratos.dev/docs/getting-started/faq
 -->
 #### What happened:
 
