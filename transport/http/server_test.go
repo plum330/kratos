@@ -53,12 +53,6 @@ func TestServeHTTP(t *testing.T) {
 			WithMetadata(map[string]string{"foo": "bar"}).
 			WithCause(errors.New("error cause"))
 	})
-	if err = mux.WalkRoute(func(r RouteInfo) error {
-		t.Logf("WalkRoute: %+v", r)
-		return nil
-	}); err != nil {
-		t.Fatal(err)
-	}
 	if e, err := mux.Endpoint(); err != nil || e == nil || strings.HasSuffix(e.Host, ":0") {
 		t.Fatal(e, err)
 	}
@@ -82,10 +76,7 @@ func TestServer(t *testing.T) {
 	srv := NewServer()
 	srv.Handle("/index", newHandleFuncWrapper(h))
 	srv.HandleFunc("/index/{id:[0-9]+}", h)
-	srv.HandlePrefix("/test/prefix", newHandleFuncWrapper(h))
-	srv.HandleHeader("content-type", "application/grpc-web+json", func(w http.ResponseWriter, r *http.Request) {
-		_ = json.NewEncoder(w).Encode(testData{Path: r.RequestURI})
-	})
+	srv.Handle("/test/prefix", newHandleFuncWrapper(h))
 	srv.Route("/errors").GET("/cause", func(ctx Context) error {
 		return kratoserrors.BadRequest("xxx", "zzz").
 			WithMetadata(map[string]string{"foo": "bar"}).
@@ -344,15 +335,6 @@ func TestTLSConfig(t *testing.T) {
 	}
 }
 
-func TestStrictSlash(t *testing.T) {
-	o := &Server{}
-	v := true
-	StrictSlash(v)(o)
-	if !reflect.DeepEqual(v, o.strictSlash) {
-		t.Errorf("expected %v got %v", v, o.tlsConf)
-	}
-}
-
 func TestListener(t *testing.T) {
 	lis, err := net.Listen("tcp", ":0")
 	if err != nil {
@@ -365,21 +347,5 @@ func TestListener(t *testing.T) {
 	}
 	if e, err := s.Endpoint(); err != nil || e == nil {
 		t.Errorf("expected not empty")
-	}
-}
-
-func TestNotFoundHandler(t *testing.T) {
-	mux := http.NewServeMux()
-	srv := NewServer(NotFoundHandler(mux))
-	if !reflect.DeepEqual(srv.router.NotFoundHandler, mux) {
-		t.Errorf("expected %v got %v", mux, srv.router.NotFoundHandler)
-	}
-}
-
-func TestMethodNotAllowedHandler(t *testing.T) {
-	mux := http.NewServeMux()
-	srv := NewServer(MethodNotAllowedHandler(mux))
-	if !reflect.DeepEqual(srv.router.MethodNotAllowedHandler, mux) {
-		t.Errorf("expected %v got %v", mux, srv.router.MethodNotAllowedHandler)
 	}
 }

@@ -20,6 +20,8 @@ import (
 	"github.com/plum330/kratos/v2/internal/matcher"
 	"github.com/plum330/kratos/v2/log"
 	"github.com/plum330/kratos/v2/middleware"
+	"github.com/plum330/kratos/v2/middleware/recovery"
+	"github.com/plum330/kratos/v2/middleware/validate"
 	"github.com/plum330/kratos/v2/transport"
 )
 
@@ -153,6 +155,8 @@ func NewServer(opts ...ServerOption) *Server {
 		middleware:       matcher.New(),
 		streamMiddleware: matcher.New(),
 	}
+	srv.middleware.Use(recovery.Recovery(), validate.Validator())
+	srv.streamMiddleware.Use(recovery.Recovery(), validate.Validator())
 	for _, o := range opts {
 		o(srv)
 	}
