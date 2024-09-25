@@ -3,7 +3,7 @@ module github.com/plum330/kratos/contrib/config/apollo/v2
 go 1.19
 
 require (
-	github.com/apolloconfig/agollo/v4 v4.3.1
+	github.com/apolloconfig/agollo/v4 v4.4.0
 	github.com/plum330/kratos/v2 v2.8.0
 )
 
