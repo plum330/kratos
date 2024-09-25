@@ -41,6 +41,7 @@ func Validator() middleware.Middleware {
 					if err := val.Validate(m); err != nil {
 						es := err.Error()
 						str := strings.Split(es, " ")
+						// nolint:gomnd
 						if len(str) == 6 {
 							return nil, errors.BadRequest(str[4], es).WithCause(err)
 						}
