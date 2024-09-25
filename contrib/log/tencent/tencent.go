@@ -9,7 +9,7 @@ import (
 	cls "github.com/tencentcloud/tencentcloud-cls-sdk-go"
 	"google.golang.org/protobuf/proto"
 
-	"github.com/go-kratos/kratos/v2/log"
+	"github.com/plum330/kratos/v2/log"
 )
 
 type Logger interface {

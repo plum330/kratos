@@ -13,7 +13,7 @@ import (
 	"github.com/go-resty/resty/v2"
 	"github.com/pkg/errors"
 
-	"github.com/go-kratos/kratos/v2/log"
+	"github.com/plum330/kratos/v2/log"
 )
 
 type Discovery struct {

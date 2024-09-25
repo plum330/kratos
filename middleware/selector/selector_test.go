@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/go-kratos/kratos/v2/middleware"
-	"github.com/go-kratos/kratos/v2/transport"
+	"github.com/plum330/kratos/v2/middleware"
+	"github.com/plum330/kratos/v2/transport"
 )
 
 var _ transport.Transporter = (*Transport)(nil)
@@ -204,7 +204,7 @@ func TestHeaderFunc(t *testing.T) {
 			name: "/hi.Create/world",
 			ctx: transport.NewServerContext(context.Background(), &Transport{
 				operation: "/hi.Create/world",
-				headers:   &mockHeader{map[string][]string{"X-Test": {"test2"}, "go-kratos": {"kratos"}}},
+				headers:   &mockHeader{map[string][]string{"X-Test": {"test2"}, "plum330": {"kratos"}}},
 			}),
 		},
 		{
@@ -236,7 +236,7 @@ func TestHeaderFunc(t *testing.T) {
 				if tr.RequestHeader().Get("X-Test") == "test" {
 					return true
 				}
-				if tr.RequestHeader().Get("go-kratos") == "kratos" {
+				if tr.RequestHeader().Get("plum330") == "kratos" {
 					return true
 				}
 				return false

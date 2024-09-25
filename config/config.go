@@ -10,11 +10,11 @@ import (
 	"dario.cat/mergo"
 
 	// init encoding
-	_ "github.com/go-kratos/kratos/v2/encoding/json"
-	_ "github.com/go-kratos/kratos/v2/encoding/proto"
-	_ "github.com/go-kratos/kratos/v2/encoding/xml"
-	_ "github.com/go-kratos/kratos/v2/encoding/yaml"
-	"github.com/go-kratos/kratos/v2/log"
+	_ "github.com/plum330/kratos/v2/encoding/json"
+	_ "github.com/plum330/kratos/v2/encoding/proto"
+	_ "github.com/plum330/kratos/v2/encoding/xml"
+	_ "github.com/plum330/kratos/v2/encoding/yaml"
+	"github.com/plum330/kratos/v2/log"
 )
 
 var _ Config = (*config)(nil)

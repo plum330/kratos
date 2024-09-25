@@ -14,11 +14,11 @@ import (
 	v1 "github.com/polarismesh/polaris-go/pkg/model/pb/v1"
 	"google.golang.org/protobuf/types/known/wrapperspb"
 
-	"github.com/go-kratos/kratos/v2"
-	"github.com/go-kratos/kratos/v2/log"
-	"github.com/go-kratos/kratos/v2/selector"
-	"github.com/go-kratos/kratos/v2/transport"
-	"github.com/go-kratos/kratos/v2/transport/http"
+	"github.com/plum330/kratos/v2"
+	"github.com/plum330/kratos/v2/log"
+	"github.com/plum330/kratos/v2/selector"
+	"github.com/plum330/kratos/v2/transport"
+	"github.com/plum330/kratos/v2/transport/http"
 )
 
 type router struct {

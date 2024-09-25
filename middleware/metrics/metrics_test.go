@@ -18,8 +18,8 @@ import (
 	"go.opentelemetry.io/otel/sdk/metric/metricdata"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 
-	"github.com/go-kratos/kratos/v2/transport"
-	"github.com/go-kratos/kratos/v2/transport/http"
+	"github.com/plum330/kratos/v2/transport"
+	"github.com/plum330/kratos/v2/transport/http"
 )
 
 type dummyExporter struct {

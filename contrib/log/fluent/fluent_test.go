@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/go-kratos/kratos/v2/log"
+	"github.com/plum330/kratos/v2/log"
 )
 
 func TestMain(m *testing.M) {

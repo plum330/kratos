@@ -1,16 +1,16 @@
-<p align="center"><a href="https://go-kratos.dev/" target="_blank"><img src="https://github.com/go-kratos/kratos/blob/main/docs/images/kratos-large.png?raw=true"></a></p>
+<p align="center"><a href="https://go-kratos.dev/" target="_blank"><img src="https://github.com/plum330/kratos/blob/main/docs/images/kratos-large.png?raw=true"></a></p>
 
 <p align="center">
-<a href="https://github.com/go-kratos/kratos/actions"><img src="https://github.com/go-kratos/kratos/workflows/Go/badge.svg" alt="Build Status"></a>
-<a href="https://pkg.go.dev/github.com/go-kratos/kratos/v2"><img src="https://pkg.go.dev/badge/github.com/go-kratos/kratos/v2" alt="GoDoc"></a>
-<a href="https://codecov.io/gh/go-kratos/kratos"><img src="https://codecov.io/gh/go-kratos/kratos/master/graph/badge.svg" alt="codeCov"></a>
-<a href="https://goreportcard.com/report/github.com/go-kratos/kratos"><img src="https://goreportcard.com/badge/github.com/go-kratos/kratos" alt="Go Report Card"></a>
-<a href="https://github.com/go-kratos/kratos/blob/main/LICENSE"><img src="https://img.shields.io/github/license/go-kratos/kratos" alt="License"></a>
+<a href="https://github.com/plum330/kratos/actions"><img src="https://github.com/plum330/kratos/workflows/Go/badge.svg" alt="Build Status"></a>
+<a href="https://pkg.go.dev/github.com/plum330/kratos/v2"><img src="https://pkg.go.dev/badge/github.com/plum330/kratos/v2" alt="GoDoc"></a>
+<a href="https://codecov.io/gh/plum330/kratos"><img src="https://codecov.io/gh/plum330/kratos/master/graph/badge.svg" alt="codeCov"></a>
+<a href="https://goreportcard.com/report/github.com/plum330/kratos"><img src="https://goreportcard.com/badge/github.com/plum330/kratos" alt="Go Report Card"></a>
+<a href="https://github.com/plum330/kratos/blob/main/LICENSE"><img src="https://img.shields.io/github/license/plum330/kratos" alt="License"></a>
 <a href="https://github.com/avelino/awesome-go"><img src="https://awesome.re/mentioned-badge.svg" alt="Awesome Go"></a>
 <a href="https://discord.gg/BWzJsUJ"><img src="https://img.shields.io/discord/766619759214854164?label=chat&logo=discord" alt="Discord"></a>
 </p>
 <p align="center">
-<a href="https://www.producthunt.com/posts/go-kratos?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-go-kratos" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=306565&theme=light" alt="Go Kratos - A Go framework for microservices. | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+<a href="https://www.producthunt.com/posts/plum330?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-plum330" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=306565&theme=light" alt="Go Kratos - A Go framework for microservices. | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 </p>
   
 ##### Translate to: [简体中文](README_zh.md)
@@ -31,15 +31,15 @@ Kratos is a microservice-oriented governance framework implemented by golang, wh
 - In the protocol of HTTP/gRPC, use the uniform [metadata](https://go-kratos.dev/en/docs/component/metadata) transfer method.
 - You can define [errors](https://go-kratos.dev/en/docs/component/errors/) in protos and generate enums with protoc-gen-go.
 - You can define [verification rules](https://go-kratos.dev/en/docs/component/middleware/validate) in Protobuf supported by the HTTP/gRPC service.
-- [Swagger API](https://go-kratos.dev/en/docs/guide/openapi) is generated Automatically and embed Swagger UI endpoint can be started by adding [Swagger plugin](https://github.com/go-kratos/swagger-api).
+- [Swagger API](https://go-kratos.dev/en/docs/guide/openapi) is generated Automatically and embed Swagger UI endpoint can be started by adding [Swagger plugin](https://github.com/plum330/swagger-api).
 
 Kratos is accessible, powerful, and provides tools required for large, robust applications.
 
 ## Learning Kratos
 
-Kratos has the most extensive and thorough [documentation](https://go-kratos.dev/en/docs/getting-started/start) and [example](https://github.com/go-kratos/examples) library of all modern web application frameworks, making it a breeze to get started with the framework.
+Kratos has the most extensive and thorough [documentation](https://go-kratos.dev/en/docs/getting-started/start) and [example](https://github.com/plum330/examples) library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-We also provide a [modern template](https://github.com/go-kratos/kratos-layout). This template should help reduce the work required to setup up modern projects.
+We also provide a [modern template](https://github.com/plum330/kratos-layout). This template should help reduce the work required to setup up modern projects.
 
 ### Goals
 
@@ -68,7 +68,7 @@ docker run -it --rm -p 8000:8000 --workdir /workspace golang
 ```shell
 apt-get update && apt-get -y install protobuf-compiler
 export GOPROXY=https://goproxy.io,direct
-go install github.com/go-kratos/kratos/cmd/kratos/v2@latest && kratos upgrade
+go install github.com/plum330/kratos/cmd/kratos/v2@latest && kratos upgrade
 ```
   
 ```shell
@@ -83,11 +83,11 @@ If you need more, please visit the kratos [documentation](https://go-kratos.dev/
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Kratos, please send an e-mail to tonybase via go-kratos@googlegroups.com. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Kratos, please send an e-mail to tonybase via plum330@googlegroups.com. All security vulnerabilities will be promptly addressed.
 
 ## Community
 
-- [Wechat Group](https://github.com/go-kratos/kratos/issues/682)
+- [Wechat Group](https://github.com/plum330/kratos/issues/682)
 - [Discord Group](https://discord.gg/BWzJsUJ)
 - [go-kratos.dev](https://go-kratos.dev/en)
 
@@ -95,8 +95,8 @@ If you discover a security vulnerability within Kratos, please send an e-mail to
 
 Thank you for considering contributing to the Kratos framework! The contribution guide can be found in the [Kratos documentation](https://go-kratos.dev/en/docs/community/contribution).
 
-<a href="https://github.com/go-kratos/kratos/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=go-kratos/kratos" />
+<a href="https://github.com/plum330/kratos/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=plum330/kratos" />
 </a>
 
 ## License

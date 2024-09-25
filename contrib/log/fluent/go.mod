@@ -1,10 +1,10 @@
-module github.com/go-kratos/kratos/contrib/log/fluent/v2
+module github.com/plum330/kratos/contrib/log/fluent/v2
 
 go 1.19
 
 require (
 	github.com/fluent/fluent-logger-golang v1.9.0
-	github.com/go-kratos/kratos/v2 v2.8.0
+	github.com/plum330/kratos/v2 v2.8.0
 )
 
 require (
@@ -14,4 +14,4 @@ require (
 	github.com/tinylib/msgp v1.1.6 // indirect
 )
 
-replace github.com/go-kratos/kratos/v2 => ../../../
+replace github.com/plum330/kratos/v2 => ../../../

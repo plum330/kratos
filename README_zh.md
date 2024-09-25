@@ -1,16 +1,16 @@
-<p align="center"><a href="https://go-kratos.dev/" target="_blank"><img src="https://github.com/go-kratos/kratos/blob/main/docs/images/kratos-large.png?raw=true"></a></p>
+<p align="center"><a href="https://go-kratos.dev/" target="_blank"><img src="https://github.com/plum330/kratos/blob/main/docs/images/kratos-large.png?raw=true"></a></p>
 
 <p align="center">
-<a href="https://github.com/go-kratos/kratos/actions"><img src="https://github.com/go-kratos/kratos/workflows/Go/badge.svg" alt="Build Status"></a>
-<a href="https://pkg.go.dev/github.com/go-kratos/kratos/v2"><img src="https://pkg.go.dev/badge/github.com/go-kratos/kratos/v2" alt="GoDoc"></a>
-<a href="https://codecov.io/gh/go-kratos/kratos"><img src="https://codecov.io/gh/go-kratos/kratos/master/graph/badge.svg" alt="codeCov"></a>
-<a href="https://goreportcard.com/report/github.com/go-kratos/kratos"><img src="https://goreportcard.com/badge/github.com/go-kratos/kratos" alt="Go Report Card"></a>
-<a href="https://github.com/go-kratos/kratos/blob/main/LICENSE"><img src="https://img.shields.io/github/license/go-kratos/kratos" alt="License"></a>
+<a href="https://github.com/plum330/kratos/actions"><img src="https://github.com/plum330/kratos/workflows/Go/badge.svg" alt="Build Status"></a>
+<a href="https://pkg.go.dev/github.com/plum330/kratos/v2"><img src="https://pkg.go.dev/badge/github.com/plum330/kratos/v2" alt="GoDoc"></a>
+<a href="https://codecov.io/gh/plum330/kratos"><img src="https://codecov.io/gh/plum330/kratos/master/graph/badge.svg" alt="codeCov"></a>
+<a href="https://goreportcard.com/report/github.com/plum330/kratos"><img src="https://goreportcard.com/badge/github.com/plum330/kratos" alt="Go Report Card"></a>
+<a href="https://github.com/plum330/kratos/blob/main/LICENSE"><img src="https://img.shields.io/github/license/plum330/kratos" alt="License"></a>
 <a href="https://github.com/avelino/awesome-go"><img src="https://awesome.re/mentioned-badge.svg" alt="Awesome Go"></a>
 <a href="https://discord.gg/BWzJsUJ"><img src="https://img.shields.io/discord/766619759214854164?label=chat&logo=discord" alt="Discord"></a>
 </p>
 <p align="center">
-<a href="https://www.producthunt.com/posts/go-kratos?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-go-kratos" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=306565&theme=light" alt="Go Kratos - A Go framework for microservices. | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+<a href="https://www.producthunt.com/posts/plum330?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-plum330" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=306565&theme=light" alt="Go Kratos - A Go framework for microservices. | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 </p>
 
 Translations: [English](README.md) | [简体中文](README_zh.md)
@@ -49,7 +49,7 @@ Kratos 一套轻量级 Go 微服务框架，包含大量微服务相关功能及
 * [Transport](https://go-kratos.dev/docs/component/transport/overview) ：通用的 [HTTP](https://go-kratos.dev/docs/component/transport/http) /[gRPC](https://go-kratos.dev/docs/component/transport/grpc) 传输层，实现统一的 [Middleware](https://go-kratos.dev/docs/component/middleware/overview) 插件支持；
 * [Registry](https://go-kratos.dev/docs/component/registry) ：实现统一注册中心接口，可插件化对接各种注册中心；
 * [Validation](https://go-kratos.dev/docs/component/middleware/validate): 通过Protobuf统一定义校验规则，并同时适用于HTTP/gRPC服务.
-* [SwaggerAPI](https://go-kratos.dev/docs/guide/openapi): 通过集成第三方[Swagger插件](https://github.com/go-kratos/swagger-api) 能够自动生成Swagger API json并启动一个内置的Swagger UI服务.
+* [SwaggerAPI](https://go-kratos.dev/docs/guide/openapi): 通过集成第三方[Swagger插件](https://github.com/plum330/swagger-api) 能够自动生成Swagger API json并启动一个内置的Swagger UI服务.
 
 ## Getting Started
 ### Required
@@ -60,12 +60,12 @@ Kratos 一套轻量级 Go 微服务框架，包含大量微服务相关功能及
 ### Installing
 ##### go install 安装：
 ```
-go install github.com/go-kratos/kratos/cmd/kratos/v2@latest
+go install github.com/plum330/kratos/cmd/kratos/v2@latest
 kratos upgrade
 ```
 ##### 源码编译安装：
 ```
-git clone https://github.com/go-kratos/kratos
+git clone https://github.com/plum330/kratos
 cd kratos
 make install
 ```
@@ -95,9 +95,9 @@ kratos run
 
 ### Kratos Boot
 ```
-import "github.com/go-kratos/kratos/v2"
-import "github.com/go-kratos/kratos/v2/transport/grpc"
-import "github.com/go-kratos/kratos/v2/transport/http"
+import "github.com/plum330/kratos/v2"
+import "github.com/plum330/kratos/v2/transport/grpc"
+import "github.com/plum330/kratos/v2/transport/http"
 
 httpSrv := http.NewServer(http.Address(":8000"))
 grpcSrv := grpc.NewServer(grpc.Address(":9000"))
@@ -113,11 +113,11 @@ app.Run()
 ## Related
 
 * [Docs](https://go-kratos.dev/)
-* [Examples](https://github.com/go-kratos/examples)
-* [Service Layout](https://github.com/go-kratos/kratos-layout)
+* [Examples](https://github.com/plum330/examples)
+* [Service Layout](https://github.com/plum330/kratos-layout)
 
 ## Community
-* [Wechat Group](https://github.com/go-kratos/kratos/issues/682)
+* [Wechat Group](https://github.com/plum330/kratos/issues/682)
 * [Discord Group](https://discord.gg/BWzJsUJ)
 * Website:  [go-kratos.dev](https://go-kratos.dev)
 * QQ Group: 716486124

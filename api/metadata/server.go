@@ -19,7 +19,7 @@ import (
 	"google.golang.org/protobuf/reflect/protoregistry"
 	dpb "google.golang.org/protobuf/types/descriptorpb"
 
-	"github.com/go-kratos/kratos/v2/log"
+	"github.com/plum330/kratos/v2/log"
 )
 
 // Server is api meta server

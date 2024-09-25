@@ -15,10 +15,10 @@ import (
 	"testing"
 	"time"
 
-	kratoserrors "github.com/go-kratos/kratos/v2/errors"
-	"github.com/go-kratos/kratos/v2/middleware"
-	"github.com/go-kratos/kratos/v2/registry"
-	"github.com/go-kratos/kratos/v2/selector"
+	kratoserrors "github.com/plum330/kratos/v2/errors"
+	"github.com/plum330/kratos/v2/middleware"
+	"github.com/plum330/kratos/v2/registry"
+	"github.com/plum330/kratos/v2/selector"
 )
 
 type mockRoundTripper struct{}
@@ -319,7 +319,7 @@ func TestNewClient(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	_, err = NewClient(context.Background(), WithDiscovery(&mockDiscovery{}), WithEndpoint("discovery:///go-kratos"))
+	_, err = NewClient(context.Background(), WithDiscovery(&mockDiscovery{}), WithEndpoint("discovery:///plum330"))
 	if err != nil {
 		t.Error(err)
 	}
@@ -339,7 +339,7 @@ func TestNewClient(t *testing.T) {
 	client, err := NewClient(
 		context.Background(),
 		WithDiscovery(&mockDiscovery{}),
-		WithEndpoint("discovery:///go-kratos"),
+		WithEndpoint("discovery:///plum330"),
 		WithMiddleware(func(handler middleware.Handler) middleware.Handler {
 			t.Logf("handle in middleware")
 			return func(ctx context.Context, req interface{}) (interface{}, error) {

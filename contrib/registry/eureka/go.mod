@@ -1,7 +1,7 @@
-module github.com/go-kratos/kratos/contrib/registry/eureka/v2
+module github.com/plum330/kratos/contrib/registry/eureka/v2
 
 go 1.19
 
-require github.com/go-kratos/kratos/v2 v2.8.0
+require github.com/plum330/kratos/v2 v2.8.0
 
-replace github.com/go-kratos/kratos/v2 => ../../../
+replace github.com/plum330/kratos/v2 => ../../../

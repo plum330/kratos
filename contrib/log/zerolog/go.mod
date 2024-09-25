@@ -1,9 +1,9 @@
-module github.com/go-kratos/kratos/contrib/log/zerolog/v2
+module github.com/plum330/kratos/contrib/log/zerolog/v2
 
 go 1.19
 
 require (
-	github.com/go-kratos/kratos/v2 v2.8.0
+	github.com/plum330/kratos/v2 v2.8.0
 	github.com/rs/zerolog v1.30.0
 )
 
@@ -13,4 +13,4 @@ require (
 	golang.org/x/sys v0.18.0 // indirect
 )
 
-replace github.com/go-kratos/kratos/v2 => ../../../
+replace github.com/plum330/kratos/v2 => ../../../

@@ -17,13 +17,13 @@ func TestNew(t *testing.T) {
 	}{
 		{
 			name: "hello",
-			args: args{[]map[string][]string{{"hello": {"kratos"}}, {"hello2": {"go-kratos"}}}},
-			want: Metadata{"hello": {"kratos"}, "hello2": {"go-kratos"}},
+			args: args{[]map[string][]string{{"hello": {"kratos"}}, {"hello2": {"plum330"}}}},
+			want: Metadata{"hello": {"kratos"}, "hello2": {"plum330"}},
 		},
 		{
 			name: "hi",
-			args: args{[]map[string][]string{{"hi": {"kratos"}}, {"hi2": {"go-kratos"}}}},
-			want: Metadata{"hi": {"kratos"}, "hi2": {"go-kratos"}},
+			args: args{[]map[string][]string{{"hi": {"kratos"}}, {"hi2": {"plum330"}}}},
+			want: Metadata{"hi": {"kratos"}, "hi2": {"plum330"}},
 		},
 	}
 	for _, tt := range tests {
@@ -337,7 +337,7 @@ func TestMergeToClientContext(t *testing.T) {
 }
 
 func TestMetadata_Range(t *testing.T) {
-	md := Metadata{"kratos": {"kratos"}, "https://go-kratos.dev/": {"https://go-kratos.dev/"}, "go-kratos": {"go-kratos"}}
+	md := Metadata{"kratos": {"kratos"}, "https://go-kratos.dev/": {"https://go-kratos.dev/"}, "plum330": {"plum330"}}
 	tmp := Metadata{}
 	md.Range(func(k string, v []string) bool {
 		if k == "https://go-kratos.dev/" || k == "kratos" {
@@ -365,8 +365,8 @@ func TestMetadata_Clone(t *testing.T) {
 	}{
 		{
 			name: "kratos",
-			m:    Metadata{"kratos": {"kratos"}, "https://go-kratos.dev/": {"https://go-kratos.dev/"}, "go-kratos": {"go-kratos"}},
-			want: Metadata{"kratos": {"kratos"}, "https://go-kratos.dev/": {"https://go-kratos.dev/"}, "go-kratos": {"go-kratos"}},
+			m:    Metadata{"kratos": {"kratos"}, "https://go-kratos.dev/": {"https://go-kratos.dev/"}, "plum330": {"plum330"}},
+			want: Metadata{"kratos": {"kratos"}, "https://go-kratos.dev/": {"https://go-kratos.dev/"}, "plum330": {"plum330"}},
 		},
 		{
 			name: "go",
