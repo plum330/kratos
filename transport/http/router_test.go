@@ -58,7 +58,7 @@ func TestRoute(t *testing.T) {
 		Filter(corsFilter, loggingFilter),
 	)
 	route := srv.Route("/v1")
-	route.GET("/users/{name}", func(ctx Context) error {
+	route.GET("/users/:name", func(ctx Context) error {
 		u := new(User)
 		u.Name = ctx.Vars().Get("name")
 		return ctx.Result(200, u)
@@ -113,7 +113,8 @@ func testRoute(t *testing.T, srv *Server) {
 		t.Fatalf("contentType: %s", v)
 	}
 	u := new(User)
-	if err = json.NewDecoder(resp.Body).Decode(u); err != nil {
+	rsp := &Response{Data: u}
+	if err = json.NewDecoder(resp.Body).Decode(rsp); err != nil {
 		t.Fatal(err)
 	}
 	if u.Name != "foo" {
@@ -132,7 +133,8 @@ func testRoute(t *testing.T, srv *Server) {
 		t.Fatalf("contentType: %s", v)
 	}
 	u = new(User)
-	if err = json.NewDecoder(resp.Body).Decode(u); err != nil {
+	rsp.Data = u
+	if err = json.NewDecoder(resp.Body).Decode(rsp); err != nil {
 		t.Fatal(err)
 	}
 	if u.Name != "bar" {
@@ -153,7 +155,8 @@ func testRoute(t *testing.T, srv *Server) {
 		t.Fatalf("contentType: %s", v)
 	}
 	u = new(User)
-	if err = json.NewDecoder(resp.Body).Decode(u); err != nil {
+	rsp.Data = u
+	if err = json.NewDecoder(resp.Body).Decode(rsp); err != nil {
 		t.Fatal(err)
 	}
 	if u.Name != "bar" {

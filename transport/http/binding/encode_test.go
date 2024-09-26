@@ -22,10 +22,10 @@ func TestEncodeURL(t *testing.T) {
 			want:         "http://helloworld.Greeter/helloworld/test/sub/2233!!!!",
 		},
 		{
-			pathTemplate: "http://helloworld.Greeter/helloworld/{name}/sub/{sub.naming}",
+			pathTemplate: "http://helloworld.Greeter/helloworld/:name/sub/{sub.naming}",
 			request:      nil,
 			needQuery:    false,
-			want:         "http://helloworld.Greeter/helloworld/{name}/sub/{sub.naming}",
+			want:         "http://helloworld.Greeter/helloworld/:name/sub/{sub.naming}",
 		},
 		{
 			pathTemplate: "http://helloworld.Greeter/helloworld/{}/sub/{sub.naming}",

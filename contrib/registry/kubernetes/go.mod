@@ -3,8 +3,8 @@ module github.com/plum330/kratos/contrib/registry/kubernetes/v2
 go 1.19
 
 require (
-	github.com/plum330/kratos/v2 v2.8.0
 	github.com/json-iterator/go v1.1.12
+	github.com/plum330/kratos/v2 v2.8.0
 	k8s.io/api v0.24.3
 	k8s.io/apimachinery v0.24.3
 	k8s.io/client-go v0.24.3

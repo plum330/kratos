@@ -113,11 +113,11 @@ app.Run()
 ## Related
 
 * [Docs](https://go-kratos.dev/)
-* [Examples](https://github.com/plum330/examples)
-* [Service Layout](https://github.com/plum330/kratos-layout)
+* [Examples](https://github.com/go-kratos/examples)
+* [Service Layout](https://github.com/go-kratos/kratos-layout)
 
 ## Community
-* [Wechat Group](https://github.com/plum330/kratos/issues/682)
+* [Wechat Group](https://github.com/go-kratos/kratos/issues/682)
 * [Discord Group](https://discord.gg/BWzJsUJ)
 * Website:  [go-kratos.dev](https://go-kratos.dev)
 * QQ Group: 716486124

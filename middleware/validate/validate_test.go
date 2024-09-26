@@ -23,6 +23,13 @@ func (v protoVali) Validate() error {
 	return nil
 }
 
+func (v protoVali) ValidateAll() error {
+	if v.name == "" || v.age < 0 {
+		return errors.New("err")
+	}
+	return nil
+}
+
 func TestTable(t *testing.T) {
 	var mock middleware.Handler = func(ctx context.Context, req interface{}) (interface{}, error) { return nil, nil }
 

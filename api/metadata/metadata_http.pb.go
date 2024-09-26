@@ -25,7 +25,7 @@ type MetadataHTTPServer interface {
 func RegisterMetadataHTTPServer(s *http.Server, srv MetadataHTTPServer) {
 	r := s.Route("/")
 	r.GET("/services", _Metadata_ListServices0_HTTP_Handler(srv))
-	r.GET("/services/{name}", _Metadata_GetServiceDesc0_HTTP_Handler(srv))
+	r.GET("/services/:name", _Metadata_GetServiceDesc0_HTTP_Handler(srv))
 }
 
 func _Metadata_ListServices0_HTTP_Handler(srv MetadataHTTPServer) func(ctx http.Context) error {
@@ -84,7 +84,7 @@ func NewMetadataHTTPClient(client *http.Client) MetadataHTTPClient {
 
 func (c *MetadataHTTPClientImpl) GetServiceDesc(ctx context.Context, in *GetServiceDescRequest, opts ...http.CallOption) (*GetServiceDescReply, error) {
 	var out GetServiceDescReply
-	pattern := "/services/{name}"
+	pattern := "/services/:name"
 	path := binding.EncodeURL(pattern, in, true)
 	opts = append(opts, http.Operation("/kratos.api.Metadata/GetServiceDesc"))
 	opts = append(opts, http.PathTemplate(pattern))
