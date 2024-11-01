@@ -77,7 +77,7 @@ func TestServer(t *testing.T) {
 	srv.Handle("/index", newHandleFuncWrapper(h))
 	srv.HandleFunc("/index/:1", h)
 	srv.Handle("/test/prefix", newHandleFuncWrapper(h))
-	srv.Route("/errors").GET("/cause", func(ctx Context) error {
+	srv.Route("/errors").GET("/cause", func(Context) error {
 		return kratoserrors.BadRequest("xxx", "zzz").
 			WithMetadata(map[string]string{"foo": "bar"}).
 			WithCause(errors.New("error cause"))

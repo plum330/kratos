@@ -19,7 +19,7 @@ var Cmd = &cobra.Command{
 	Use:   "create",
 	Short: "create the proto code",
 	Long:  "create the proto code",
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, args []string) {
 		if len(args) == 0 {
 			fmt.Println("Enter proto files or directory")
 			return
@@ -85,7 +85,7 @@ func walk(dir string) error {
 		return errors.New("dir invalid")
 	}
 
-	err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
+	err := filepath.Walk(dir, func(path string, _ os.FileInfo, _ error) error {
 		if filepath.Ext(path) != ".proto" || strings.HasPrefix(path, "third_party") {
 			return nil
 		}
