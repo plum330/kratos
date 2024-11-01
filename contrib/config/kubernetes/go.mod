@@ -3,7 +3,7 @@ module github.com/plum330/kratos/contrib/config/kubernetes/v2
 go 1.19
 
 require (
-	github.com/plum330/kratos/v2 v2.8.1
+	github.com/plum330/kratos/v2 v2.8.2
 	k8s.io/api v0.26.3
 	k8s.io/apimachinery v0.26.3
 	k8s.io/client-go v0.26.3

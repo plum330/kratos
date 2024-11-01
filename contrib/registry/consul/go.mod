@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/hashicorp/consul/api v1.26.1
-	github.com/plum330/kratos/v2 v2.8.1
+	github.com/plum330/kratos/v2 v2.8.2
 )
 
 require (
