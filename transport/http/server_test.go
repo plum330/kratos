@@ -48,7 +48,7 @@ func TestServeHTTP(t *testing.T) {
 	}
 	mux := NewServer(Listener(ln))
 	mux.HandleFunc("/index", h)
-	mux.Route("/errors").GET("/cause", func(ctx Context) error {
+	mux.Route("/errors").GET("/cause", func(Context) error {
 		return kratoserrors.BadRequest("xxx", "zzz").
 			WithMetadata(map[string]string{"foo": "bar"}).
 			WithCause(errors.New("error cause"))
@@ -144,8 +144,7 @@ func testHeader(t *testing.T, srv *Server) {
 	if err != nil {
 		t.Errorf("expected nil got %v", err)
 	}
-	reqURL := fmt.Sprintf(e.String() + "/index")
-	req, err := http.NewRequest(http.MethodGet, reqURL, nil)
+	req, err := http.NewRequest(http.MethodGet, e.String()+"/index", nil)
 	if err != nil {
 		t.Errorf("expected nil got %v", err)
 	}
@@ -169,11 +168,11 @@ func testClient(t *testing.T, srv *Server) {
 		{http.MethodPatch, "/index", http.StatusOK},
 		{http.MethodDelete, "/index", http.StatusOK},
 
-		{http.MethodGet, "/index/:1", http.StatusOK},
-		{http.MethodPut, "/index/:1", http.StatusOK},
-		{http.MethodPost, "/index/:1", http.StatusOK},
-		{http.MethodPatch, "/index/:1", http.StatusOK},
-		{http.MethodDelete, "/index/:1", http.StatusOK},
+		{http.MethodGet, "/index/1", http.StatusOK},
+		{http.MethodPut, "/index/1", http.StatusOK},
+		{http.MethodPost, "/index/1", http.StatusOK},
+		{http.MethodPatch, "/index/1", http.StatusOK},
+		{http.MethodDelete, "/index/1", http.StatusOK},
 
 		{http.MethodGet, "/errors/cause", http.StatusBadRequest},
 		{http.MethodGet, "/test/prefix", http.StatusOK},
@@ -189,7 +188,7 @@ func testClient(t *testing.T, srv *Server) {
 	defer client.Close()
 	for _, test := range tests {
 		var res testData
-		reqURL := fmt.Sprintf(e.String() + test.path)
+		reqURL := e.String() + test.path
 		req, err := http.NewRequest(test.method, reqURL, nil)
 		if err != nil {
 			t.Fatal(err)
