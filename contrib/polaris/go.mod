@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/go-kratos/aegis v0.2.0
 	github.com/google/uuid v1.4.0
-	github.com/plum330/kratos/v2 v2.8.2
+	github.com/plum330/kratos/v2 v2.8.3
 	github.com/polarismesh/polaris-go v1.3.0
 	google.golang.org/protobuf v1.33.0
 )
@@ -48,7 +48,6 @@ require (
 	github.com/prometheus/client_model v0.2.0 // indirect
 	github.com/prometheus/common v0.32.1 // indirect
 	github.com/prometheus/procfs v0.7.3 // indirect
-	github.com/rs/cors v1.11.1 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
 	github.com/stoewer/go-strcase v1.3.0 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect

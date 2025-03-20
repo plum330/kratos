@@ -19,6 +19,7 @@ var CmdUpgrade = &cobra.Command{
 // Run upgrade the kratos tools.
 func Run(_ *cobra.Command, _ []string) {
 	plugins := []string{
+		"github.com/plum330/kratos/cmd/kratos/v2@latest",
 		"github.com/plum330/kratos/cmd/protoc-gen-go-http/v2@latest",
 		"github.com/plum330/kratos/cmd/protoc-gen-go-errors/v2@latest",
 		"google.golang.org/protobuf/cmd/protoc-gen-go@latest",

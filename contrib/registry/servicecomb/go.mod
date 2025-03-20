@@ -6,7 +6,7 @@ require (
 	github.com/go-chassis/cari v0.6.0
 	github.com/go-chassis/sc-client v0.6.1-0.20210615014358-a45e9090c751
 	github.com/gofrs/uuid v4.2.0+incompatible
-	github.com/plum330/kratos/v2 v2.8.2
+	github.com/plum330/kratos/v2 v2.8.3
 )
 
 require (
@@ -17,3 +17,5 @@ require (
 	github.com/gorilla/websocket v1.4.3-0.20210424162022-e8629af678b7 // indirect
 	golang.org/x/net v0.23.0 // indirect
 )
+
+replace github.com/plum330/kratos/v2 => ../../../

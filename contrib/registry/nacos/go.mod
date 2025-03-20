@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/nacos-group/nacos-sdk-go v1.0.9
-	github.com/plum330/kratos/v2 v2.8.2
+	github.com/plum330/kratos/v2 v2.8.3
 )
 
 require (
