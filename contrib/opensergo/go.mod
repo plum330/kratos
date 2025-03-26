@@ -4,7 +4,7 @@ go 1.21
 
 require (
 	github.com/opensergo/opensergo-go v0.0.0-20220331070310-e5b01fee4d1c
-	github.com/plum330/kratos/v2 v2.8.3
+	github.com/plum330/kratos/v2 v2.8.4
 	golang.org/x/net v0.30.0
 	google.golang.org/genproto/googleapis/api v0.0.0-20240102182953-50ed04b92917
 	google.golang.org/grpc v1.61.1
