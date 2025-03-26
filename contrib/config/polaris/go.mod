@@ -1,6 +1,6 @@
 module github.com/plum330/kratos/contrib/config/polaris/v2
 
-go 1.19
+go 1.21
 
 require (
 	github.com/plum330/kratos/v2 v2.8.3

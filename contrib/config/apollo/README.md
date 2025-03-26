@@ -84,12 +84,12 @@ apollo config center use `Namespace` to be part of the key. For example:
 you got them in kratos config instance maybe look like:
 
 ```go
-config := map[string]interface{}{
+config := map[string]any{
 	// application be part of the key path.
-	"application": map[string]interface{}{
-        "http": map[string]interface{}{
+	"application": map[string]any{
+        "http": map[string]any{
             "address": ":8080",
-            "tls": map[string]interface{}{
+            "tls": map[string]any{
                 "enable": false,
                 "cert_file": "",
                 "key_file": ""

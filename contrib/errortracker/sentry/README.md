@@ -23,7 +23,7 @@ var opts = []http.ServerOption{
 	http.Middleware(
 		recovery.Recovery(),
 		tracing.Server(),
-		ksentry.Server(ksentry.WithTags(map[string]interface{}{
+		ksentry.Server(ksentry.WithTags(map[string]any{
 			"tag": "some-custom-constant-tag",
 			"trace_id": tracing.TraceID(), // If you want to use the TraceID valuer, you need to place it after the A middleware.
 		})), // must after Recovery middleware, because of the exiting order will be reversed
@@ -37,7 +37,7 @@ var opts = []grpc.ServerOption{
      grpc.Middleware(
 		recovery.Recovery(),
 		tracing.Server(),
-		ksentry.Server(ksentry.WithTags(map[string]interface{}{
+		ksentry.Server(ksentry.WithTags(map[string]any{
 			"tag": "some-custom-constant-tag",
 			"trace_id": tracing.TraceID(), // If you want to use the TraceID valuer, you need to place it after the A middleware.
 		})), // must after Recovery middleware, because of the exiting order will be reversed

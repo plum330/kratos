@@ -184,7 +184,7 @@ func NewServer(opts ...ServerOption) *Server {
 		decBody:    DefaultRequestDecoder,
 		enc:        DefaultResponseEncoder,
 		ene:        DefaultErrorEncoder,
-		engine:     gin.New(),
+		engine:     gin.New(), // export GIN_MODE=release
 	}
 	srv.middleware.Use(recovery.Recovery(), validate.Validator())
 	srv.engine.HandleMethodNotAllowed = true
@@ -299,7 +299,14 @@ func (s *Server) Start(ctx context.Context) error {
 // Stop stop the HTTP server.
 func (s *Server) Stop(ctx context.Context) error {
 	log.Info("[HTTP] server stopping")
-	return s.Shutdown(ctx)
+	err := s.Shutdown(ctx)
+	if err != nil {
+		if ctx.Err() != nil {
+			log.Warn("[HTTP] server couldn't stop gracefully in time, doing force stop")
+			err = s.Server.Close()
+		}
+	}
+	return err
 }
 
 func (s *Server) listenAndEndpoint() error {

@@ -1,6 +1,6 @@
 module github.com/plum330/kratos/contrib/registry/discovery/v2
 
-go 1.19
+go 1.21
 
 require (
 	github.com/go-resty/resty/v2 v2.11.0

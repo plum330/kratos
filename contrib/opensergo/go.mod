@@ -1,6 +1,6 @@
 module github.com/plum330/kratos/contrib/opensergo/v2
 
-go 1.19
+go 1.21
 
 require (
 	github.com/opensergo/opensergo-go v0.0.0-20220331070310-e5b01fee4d1c

@@ -31,7 +31,7 @@ func init() {
 // Validator is a validator middleware.
 func Validator() middleware.Middleware {
 	return func(handler middleware.Handler) middleware.Handler {
-		return func(ctx context.Context, req interface{}) (interface{}, error) {
+		return func(ctx context.Context, req any) (any, error) {
 			if v, ok := req.(validator); ok {
 				if err := v.ValidateAll(); err != nil {
 					return nil, errors.BadRequest("VALIDATOR", err.Error()).WithCause(err)

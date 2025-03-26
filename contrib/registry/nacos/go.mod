@@ -1,6 +1,6 @@
 module github.com/plum330/kratos/contrib/registry/nacos/v2
 
-go 1.19
+go 1.21
 
 require (
 	github.com/nacos-group/nacos-sdk-go v1.0.9
