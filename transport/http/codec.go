@@ -108,7 +108,7 @@ func DefaultResponseEncoder(w http.ResponseWriter, r *http.Request, v any) error
 
 	rsp := &Response{
 		Head: Head{
-			Msg:  "ÊàêÂäü",
+			Msg:  "≥…π¶",
 			Code: http.StatusOK,
 		},
 		Data: v,
@@ -135,14 +135,8 @@ func DefaultResponseEncoder(w http.ResponseWriter, r *http.Request, v any) error
 // DefaultErrorEncoder encodes the error to the HTTP response.
 func DefaultErrorEncoder(w http.ResponseWriter, r *http.Request, err error) {
 	se := errors.FromError(err)
-	rsp := &Response{
-		Head: Head{
-			Code: int(se.Code),
-			Msg:  se.Message,
-		},
-	}
 	codec, _ := CodecForRequest(r, "Accept")
-	body, err := codec.Marshal(rsp)
+	body, err := codec.Marshal(se)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		return

@@ -163,8 +163,6 @@ func NewServer(opts ...ServerOption) *Server {
 		middleware:       matcher.New(),
 		streamMiddleware: matcher.New(),
 	}
-	srv.middleware.Use(recovery.Recovery(), validate.Validator())
-	srv.streamMiddleware.Use(recovery.Recovery(), validate.Validator())
 	for _, o := range opts {
 		o(srv)
 	}
@@ -248,7 +246,7 @@ func (s *Server) Stop(ctx context.Context) error {
 	go func() {
 		defer close(done)
 		log.Info("[gRPC] server stopping")
-		s.Server.GracefulStop()
+		s.GracefulStop()
 	}()
 
 	select {
