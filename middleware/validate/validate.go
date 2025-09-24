@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/bufbuild/protovalidate-go"
+
 	"github.com/plum330/kratos/v2/errors"
 	"github.com/plum330/kratos/v2/middleware"
 
@@ -16,19 +17,24 @@ type validator interface {
 	ValidateAll() error
 }
 
-// Validator is a validator middleware.
-func Validator() middleware.Middleware {
-	val, err := protovalidate.New()
+var val *protovalidate.Validator
+
+func init() {
+	var err error
+	val, err = protovalidate.New()
 	if err != nil {
 		panic(fmt.Sprintf("init protovalidator error:%+v", err))
 	}
+}
 
+// Validator is a validator middleware.
+func Validator() middleware.Middleware {
 	return func(handler middleware.Handler) middleware.Handler {
 		return func(ctx context.Context, req any) (any, error) {
 			var (
 				ok  bool
-				err error
 				v   validator
+				err error
 				m   proto.Message
 			)
 			reason := "VALIDATOR"

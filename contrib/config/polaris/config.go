@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/polarismesh/polaris-go"
-
 	"github.com/plum330/kratos/v2/config"
+
+	"github.com/polarismesh/polaris-go"
 )
 
 // Option is polaris config option.

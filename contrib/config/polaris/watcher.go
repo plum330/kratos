@@ -5,11 +5,11 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/polarismesh/polaris-go"
-	"github.com/polarismesh/polaris-go/pkg/model"
-
 	"github.com/plum330/kratos/v2/config"
 	"github.com/plum330/kratos/v2/log"
+
+	"github.com/polarismesh/polaris-go"
+	"github.com/polarismesh/polaris-go/pkg/model"
 )
 
 type Watcher struct {

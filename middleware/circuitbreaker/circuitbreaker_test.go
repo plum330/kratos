@@ -6,6 +6,7 @@ import (
 	"testing"
 
 	"github.com/go-kratos/aegis/circuitbreaker"
+
 	kratoserrors "github.com/plum330/kratos/v2/errors"
 	"github.com/plum330/kratos/v2/internal/group"
 	"github.com/plum330/kratos/v2/transport"

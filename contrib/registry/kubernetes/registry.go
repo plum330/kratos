@@ -13,6 +13,9 @@ import (
 	"time"
 
 	jsoniter "github.com/json-iterator/go"
+
+	"github.com/plum330/kratos/v2/registry"
+
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/labels"
@@ -21,8 +24,6 @@ import (
 	"k8s.io/client-go/kubernetes"
 	listerv1 "k8s.io/client-go/listers/core/v1"
 	"k8s.io/client-go/tools/cache"
-
-	"github.com/plum330/kratos/v2/registry"
 )
 
 // Defines the key name of specific fields

@@ -6,13 +6,14 @@ import (
 	"errors"
 	"time"
 
-	"google.golang.org/grpc/attributes"
-	"google.golang.org/grpc/resolver"
-
 	"github.com/go-kratos/aegis/subset"
+
 	"github.com/plum330/kratos/v2/internal/endpoint"
 	"github.com/plum330/kratos/v2/log"
 	"github.com/plum330/kratos/v2/registry"
+
+	"google.golang.org/grpc/attributes"
+	"google.golang.org/grpc/resolver"
 )
 
 type discoveryResolver struct {
