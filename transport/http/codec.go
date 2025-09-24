@@ -108,7 +108,7 @@ func DefaultResponseEncoder(w http.ResponseWriter, r *http.Request, v any) error
 
 	rsp := &Response{
 		Head: Head{
-			Msg:  "³É¹¦",
+			Msg:  "OK",
 			Code: http.StatusOK,
 		},
 		Data: v,

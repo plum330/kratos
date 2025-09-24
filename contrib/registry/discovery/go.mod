@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/go-resty/resty/v2 v2.11.0
 	github.com/pkg/errors v0.9.1
-	github.com/plum330/kratos/v2 v2.8.4
+	github.com/plum330/kratos/v2 v2.9.0
 )
 
 require golang.org/x/net v0.35.0 // indirect

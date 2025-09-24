@@ -5,7 +5,7 @@ go 1.23.0
 require (
 	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.36.6-20250717165733-d22d418d82d8.1
 	github.com/envoyproxy/protoc-gen-validate v1.2.1
-	github.com/plum330/kratos/v2 v2.8.4
+	github.com/plum330/kratos/v2 v2.9.0
 	google.golang.org/protobuf v1.36.6
 )
 
