@@ -9,12 +9,12 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/google/uuid"
+	"golang.org/x/sync/errgroup"
+
 	"github.com/plum330/kratos/v2/log"
 	"github.com/plum330/kratos/v2/registry"
 	"github.com/plum330/kratos/v2/transport"
-
-	"github.com/google/uuid"
-	"golang.org/x/sync/errgroup"
 )
 
 // AppInfo is application context value.

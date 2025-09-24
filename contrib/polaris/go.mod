@@ -1,6 +1,8 @@
 module github.com/plum330/kratos/contrib/polaris/v2
 
-go 1.21
+go 1.23.0
+
+toolchain go1.24.2
 
 require (
 	github.com/go-kratos/aegis v0.2.0

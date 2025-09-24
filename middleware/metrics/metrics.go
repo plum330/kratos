@@ -7,7 +7,6 @@ import (
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/metric"
 	metricsdk "go.opentelemetry.io/otel/sdk/metric"
-
 	"google.golang.org/grpc/codes"
 
 	"github.com/plum330/kratos/v2/errors"

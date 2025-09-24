@@ -10,7 +10,6 @@ import (
 	"github.com/google/uuid"
 
 	"github.com/go-kratos/aegis/subset"
-
 	"github.com/plum330/kratos/v2/internal/endpoint"
 	"github.com/plum330/kratos/v2/log"
 	"github.com/plum330/kratos/v2/registry"

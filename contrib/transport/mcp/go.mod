@@ -5,8 +5,8 @@ go 1.23
 toolchain go1.24.2
 
 require (
-	github.com/mark3labs/mcp-go v0.23.0
 	github.com/plum330/kratos/v2 v2.9.0
+	github.com/mark3labs/mcp-go v0.23.0
 )
 
 require (
