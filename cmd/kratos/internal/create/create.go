@@ -20,7 +20,8 @@ var Cmd = &cobra.Command{
 	Short: "create the proto code",
 	Long:  "create the proto code",
 	Run: func(_ *cobra.Command, args []string) {
-		if len(args) == 0 {
+		num := len(args)
+		if num == 0 {
 			fmt.Println("Enter proto files or directory")
 			return
 		}
@@ -31,9 +32,14 @@ var Cmd = &cobra.Command{
 			"protoc-gen-validate", "protoc-gen-go-errors",
 			"wire", "statik", "yq", "protoc-go-inject-tag",
 		}
+
+		upgrade := []string{"upgrade"}
+		if num > 1 {
+			upgrade = append(upgrade, args[num-1])
+		}
 		err := find(plugins...)
 		if err != nil {
-			cmd := exec.Command("kratos", "upgrade")
+			cmd := exec.Command("kratos", upgrade...)
 			cmd.Stdout = os.Stdout
 			cmd.Stderr = os.Stderr
 			if err = cmd.Run(); err != nil {
@@ -51,7 +57,7 @@ var Cmd = &cobra.Command{
 			fmt.Printf("history version:%s\ncurrent version:%s\n", ver, version.Release)
 
 			if strings.Compare(ver, version.Release) != 0 {
-				cmd := exec.Command("kratos", "upgrade")
+				cmd := exec.Command("kratos", upgrade...)
 				cmd.Stdout = os.Stdout
 				cmd.Stderr = os.Stderr
 				if err = cmd.Run(); err != nil {
@@ -60,7 +66,7 @@ var Cmd = &cobra.Command{
 			}
 		}
 
-		debug = len(args) >= 2
+		debug = len(args) >= 3
 
 		err = walk(strings.TrimSpace(args[0]))
 		if err != nil {
