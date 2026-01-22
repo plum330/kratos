@@ -3,9 +3,9 @@
 ```go
 import (
 	"log"
-	
+
 	"github.com/polarismesh/polaris-go"
-	
+
 	"github.com/plum330/kratos/contrib/config/polaris/v2"
 )
 

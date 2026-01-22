@@ -1,8 +1,8 @@
 module github.com/plum330/kratos/contrib/transport/mcp/v2
 
-go 1.23
+go 1.23.0
 
-toolchain go1.24.2
+toolchain go1.24.6
 
 require (
 	github.com/plum330/kratos/v2 v2.9.0

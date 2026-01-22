@@ -2,7 +2,7 @@ package random
 
 import (
 	"context"
-	"math/rand"
+	"math/rand/v2"
 
 	"github.com/plum330/kratos/v2/selector"
 	"github.com/plum330/kratos/v2/selector/node/direct"
@@ -13,7 +13,7 @@ const (
 	Name = "random"
 )
 
-var _ selector.Balancer = (*Balancer)(nil) // Name is balancer name
+var _ selector.Balancer = (*Balancer)(nil)
 
 // Option is random builder option.
 type Option func(o *options)
@@ -34,7 +34,7 @@ func (p *Balancer) Pick(_ context.Context, nodes []selector.WeightedNode) (selec
 	if len(nodes) == 0 {
 		return nil, nil, selector.ErrNoAvailable
 	}
-	cur := rand.Intn(len(nodes))
+	cur := rand.IntN(len(nodes))
 	selected := nodes[cur]
 	d := selected.Pick()
 	return selected, d, nil

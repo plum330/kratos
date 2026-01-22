@@ -4,17 +4,16 @@ This middleware helps you to catch panics and report them to [sentry](https://se
 ## Quick Start
 You could check the full demo in example folder.
 ```go
-// Step 1: 
+// Step 1:
 // init sentry in the entry of your application
 import "github.com/getsentry/sentry-go"
 
 sentry.Init(sentry.ClientOptions{
-		Dsn: "<your dsn>",
-		AttachStacktrace: true, // recommended
+	Dsn: "<your dsn>",
+	AttachStacktrace: true, // recommended
 })
 
-
-// Step 2: 
+// Step 2:
 // set middleware
 import 	ksentry "github.com/plum330/kratos/contrib/errortracker/sentry/v2"
 
@@ -27,14 +26,13 @@ var opts = []http.ServerOption{
 			"tag": "some-custom-constant-tag",
 			"trace_id": tracing.TraceID(), // If you want to use the TraceID valuer, you need to place it after the A middleware.
 		})), // must after Recovery middleware, because of the exiting order will be reversed
-		
-		logging.Server(logger), 
+		logging.Server(logger),
 	),
 }
 
 // for gRPC server, new gRPC server with sentry middleware options
 var opts = []grpc.ServerOption{
-     grpc.Middleware(
+	grpc.Middleware(
 		recovery.Recovery(),
 		tracing.Server(),
 		ksentry.Server(ksentry.WithTags(map[string]any{
@@ -42,9 +40,8 @@ var opts = []grpc.ServerOption{
 			"trace_id": tracing.TraceID(), // If you want to use the TraceID valuer, you need to place it after the A middleware.
 		})), // must after Recovery middleware, because of the exiting order will be reversed
 		logging.Server(logger),
-     ),
- }
-
+	),
+}
 
 // Then, the framework will report events to Sentry when your trigger panics.
 // Or your can push events to Sentry manually

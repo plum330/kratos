@@ -1,6 +1,6 @@
 module github.com/plum330/kratos/contrib/registry/zookeeper/v2
 
-go 1.21
+go 1.22
 
 require (
 	github.com/go-zookeeper/zk v1.0.3

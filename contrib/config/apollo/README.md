@@ -32,8 +32,8 @@ func main() {
 	if err := c.Load(); err != nil {
 		panic(err)
 	}
-	
-	// use value and watch operations，help yourself. 
+
+	// use value and watch operations，help yourself.
 }
 ```
 
@@ -55,7 +55,7 @@ func WithEnableBackup() Option
 // specify apollo endpoint, such as http://localhost:8080
 func WithEndpoint(endpoint string) Option
 
-// namespaces to load, comma to separate. 
+// namespaces to load, comma to separate.
 func WithNamespace(name string) Option
 
 // secret is the apollo secret key to access application config.
@@ -88,13 +88,13 @@ config := map[string]any{
 	// application be part of the key path.
 	"application": map[string]any{
         "http": map[string]any{
-            "address": ":8080",
+			"address": ":8080",
             "tls": map[string]any{
-                "enable": false,
-                "cert_file": "",
-                "key_file": ""
-            }
-        }
-    }
+				"enable": false,
+				"cert_file": "",
+				"key_file": "",
+			},
+		},
+	},
 }
 ```
