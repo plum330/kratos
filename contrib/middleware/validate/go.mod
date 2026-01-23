@@ -1,11 +1,13 @@
 module github.com/plum330/kratos/contrib/middleware/validate/v2
 
-go 1.24.0
+go 1.23.0
+
+toolchain go1.24.6
 
 require (
 	buf.build/gen/go/bufbuild/protovalidate/protocolbuffers/go v1.36.6-20250717165733-d22d418d82d8.1
 	github.com/envoyproxy/protoc-gen-validate v1.2.1
-	github.com/plum330/kratos/v2 v2.9.0
+	github.com/plum330/kratos/v2 v2.9.2
 	google.golang.org/protobuf v1.36.6
 )
 

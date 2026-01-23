@@ -3,9 +3,9 @@ module github.com/plum330/kratos/contrib/log/tencent/v2
 go 1.22
 
 require (
-	github.com/plum330/kratos/v2 v2.9.0
+	github.com/plum330/kratos/v2 v2.9.2
 	github.com/tencentcloud/tencentcloud-cls-sdk-go v1.0.2
-	google.golang.org/protobuf v1.34.1
+	google.golang.org/protobuf v1.36.5
 )
 
 require (

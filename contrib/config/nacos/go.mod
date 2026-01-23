@@ -3,8 +3,8 @@ module github.com/plum330/kratos/contrib/config/nacos/v2
 go 1.22
 
 require (
-	github.com/plum330/kratos/v2 v2.9.0
 	github.com/nacos-group/nacos-sdk-go v1.0.9
+	github.com/plum330/kratos/v2 v2.9.2
 )
 
 require (
@@ -23,7 +23,7 @@ require (
 	go.uber.org/atomic v1.6.0 // indirect
 	go.uber.org/multierr v1.5.0 // indirect
 	go.uber.org/zap v1.15.0 // indirect
-	google.golang.org/protobuf v1.34.1 // indirect
+	google.golang.org/protobuf v1.36.5 // indirect
 	gopkg.in/ini.v1 v1.42.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )

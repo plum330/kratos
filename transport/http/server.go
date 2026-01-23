@@ -186,7 +186,7 @@ func NewServer(opts ...ServerOption) *Server {
 		ene:        DefaultErrorEncoder,
 		engine:     gin.New(), // export GIN_MODE=release
 	}
-	srv.middleware.Use(recovery.Recovery(), validate.Validator())
+	srv.middleware.Use(recovery.Recovery(), validate.ProtoValidate())
 	srv.engine.HandleMethodNotAllowed = true
 	for _, o := range opts {
 		o(srv)

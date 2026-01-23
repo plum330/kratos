@@ -163,8 +163,8 @@ func NewServer(opts ...ServerOption) *Server {
 		middleware:       matcher.New(),
 		streamMiddleware: matcher.New(),
 	}
-	srv.middleware.Use(recovery.Recovery(), validate.Validator())
-	srv.streamMiddleware.Use(recovery.Recovery(), validate.Validator())
+	srv.middleware.Use(recovery.Recovery(), validate.ProtoValidate())
+	srv.streamMiddleware.Use(recovery.Recovery(), validate.ProtoValidate())
 	for _, o := range opts {
 		o(srv)
 	}
