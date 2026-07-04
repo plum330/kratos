@@ -228,8 +228,14 @@ func buildMethodDesc(g *protogen.GeneratedFile, m *protogen.Method, method, path
 	paths := strings.Split(md.Path, "/")
 	for index, elem := range paths {
 		l := len(elem)
-		if l > 0 && (elem[0] == '{' && elem[l-1] == '}' || elem[0] == ':') {
-			paths[index] = ":" + elem[1:l-1]
+		if l > 0 {
+			if elem[0] == '{' && elem[l-1] == '}' {
+				paths[index] = ":" + elem[1:l-1]
+			} else if elem[0] == ':' {
+				paths[index] = ":" + elem[1:l]
+			} else {
+				// TODO
+			}
 		}
 	}
 	md.Path = strings.Join(paths, "/")
@@ -240,7 +246,7 @@ func buildPathVars(path string) (res map[string]*string) {
 	if strings.HasSuffix(path, "/") {
 		fmt.Fprintf(os.Stderr, "\u001B[31mWARN\u001B[m: Path %s should not end with \"/\" \n", path)
 	}
-	pattern := regexp.MustCompile(`(?i){([a-z.0-9_\s]*)=?([^{}]*)}`)
+	pattern := regexp.MustCompile(`(?i)[{:]([a-z.0-9_\s]*)(?:=([^{}]*))?[}]?`)
 	matches := pattern.FindAllStringSubmatch(path, -1)
 	res = make(map[string]*string, len(matches))
 	for _, m := range matches {
